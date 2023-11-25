@@ -1,0 +1,281 @@
+(* Category : Objects, Arrows, id, composition *)
+Require Import Coq.Logic.FunctionalExtensionality.
+
+Reserved Notation "g ∘ f" (at level 12, right associativity).
+
+
+Class Category : Type :=
+  { Obj : Type;
+
+    Hom : Obj -> Obj -> Type; 
+
+    id : forall a : Obj, Hom a a;
+    
+    compose : forall {a b c : Obj}, Hom a b -> Hom b c -> Hom a c where "f ∘ g" := (compose g f);
+    
+    compose_assoc : forall {a b c d : Obj} (h : Hom c d) (g : Hom b c) (f : Hom a b),
+        h ∘ (g ∘ f) = (h ∘ g) ∘ f;
+    
+    id_left_unit : forall {a b : Obj} {f : Hom a b}, (id b) ∘ f = f;
+    
+    id_right_unit : forall {a b : Obj} {f : Hom a b}, f ∘ (id a)  = f }.
+
+Arguments Hom {_} _ _,  _ _ _.
+Arguments id {_} _.
+
+Hint Resolve compose_assoc id_right_unit id_left_unit.
+
+Notation "g ∘ f" := (compose f g) : category_scope.
+
+(* Functor F : Obj F : Morph *)
+
+Coercion Obj : Category >-> Sortclass.
+
+Open Scope category_scope.
+Open Scope type_scope.
+
+
+
+#[refine] Instance Prod_Category (C D : Category) : Category :=
+  { Obj := C * D;
+    Hom := fun a b => (Hom (fst a) (fst b) * Hom (snd a) (snd b));
+    id a := (id (fst a), id (snd a));
+    compose _ _ _ f g := (compose (fst f) (fst g), compose (snd f) (snd g))
+  }.
+Proof.
+  - intros a b c d h g f; simpl.
+    f_equal; apply compose_assoc.
+  - intros a b f; simpl.
+    do 2 rewrite id_left_unit.
+    symmetry; apply surjective_pairing.
+  - intros a b f; simpl.
+    do 2 rewrite id_right_unit.
+    symmetry; apply surjective_pairing.
+Defined.
+
+Program Instance Op (C : Category) : Category :=
+  {
+  Obj := C;
+  Hom a b := Hom C b a;
+  id := @id C;
+  compose {a b c : Obj} (f : Hom b a) (g : Hom c b) := @compose C _ _ _ g f
+  }.
+Next Obligation.
+  intros C a b c d h g f.
+  symmetry.
+  apply compose_assoc.
+Qed.
+Next Obligation.
+  intros C a b f.
+  simpl.
+  apply id_right_unit.
+Qed.
+Next Obligation.
+  intros C a b f.
+  apply id_left_unit.
+Qed.
+
+Class Functor (C C' : Category) : Type :=
+  {
+  F : C -> C'; 
+  fmap : forall {a b : C},  Hom a b -> Hom (F a) (F b);
+  id_fmap : forall a : C, fmap (id a) = id (F a);
+  compose_fmap : forall {a b c : C} (f : Hom a b) (g : Hom b c), fmap (g ∘ f) = fmap g ∘ fmap f
+  }.
+
+Definition initial (C : Category) :=
+  fun a : C => forall b : C, inhabited (Hom a b) /\ forall f g: Hom a b, f = g.
+
+Definition terminal (C : Category) :=
+  fun a : C => forall b : C, inhabited (Hom b a) /\ forall f g : Hom b a, f = g.
+
+
+(* Categories product *)
+
+
+
+(* Cartesian product *)
+
+Class Product {C : Category} (a b : C) : Type :=
+  {
+  product : C;
+  π1 : Hom product a;
+  π2 : Hom product b;
+  product_morph : forall c (f : Hom c a) (g : Hom c b), Hom c product;
+  product_morph_coml : forall c (f : Hom c a) (g : Hom c b), f = π1 ∘ (product_morph c f g);
+  product_morph_comr : forall c (f : Hom c a) (g : Hom c b), g = π2 ∘ (product_morph c f g);
+  product_morph_unique : forall c (f : Hom c a) (g : Hom c b) (h : Hom c product),
+      f = π1 ∘ h -> g = π2 ∘ h -> h = product_morph c f g      
+  }.
+
+Class CoProduct {C : Category} (a b : C) : Type :=
+  {
+  coproduct : C;
+  inj1 : Hom a coproduct;
+  inj2 : Hom b coproduct;
+  coproduct_morph : forall c (f : Hom a c) (g : Hom b c), Hom coproduct c;
+  coproduct_morph_coml : forall c (f : Hom a c) (g : Hom b c), f = (coproduct_morph c f g) ∘ inj1;
+  coproduct_morph_comr : forall c (f : Hom a c) (g : Hom b c), g = (coproduct_morph c f g) ∘ inj2;
+  coproduct_morph_unique : forall c (f : Hom a c) (g : Hom b c) (h : Hom coproduct c),
+      f = h ∘ inj1 -> g = h ∘ inj2 -> h = coproduct_morph c f g
+  }.
+
+Definition hasProducts (C : Category) := forall a b, Product a b.
+
+Coercion product : Product >-> Obj.
+
+Typeclasses eauto := debug.
+
+Existing Class hasProducts.
+
+Print Instances Product.
+
+
+
+#[refine]
+ Instance Prod_Func (C : Category) {HP : hasProducts C} : Functor (Prod_Category C C) C :=
+  {
+  F := fun x => HP (fst x) (snd x);
+             fmap := fun a b f => product_morph _   ((fst f) ∘ π1) (snd f ∘ π2)
+  }.
+Proof.
+Admitted.
+
+
+(* Coercion product : Product >-> Obj. *)
+
+
+
+Definition monic {C : Category} {b c : C} (f : Hom b c) :=
+  forall (a : C) (g h : Hom a b), f ∘ g = f ∘ h -> g = h.
+
+
+Definition epic {C : Category} {a b : C} (f : Hom a b) :=
+  forall (c : C) (g h : Hom b c), g ∘ f = h ∘ f -> g = h.
+
+Definition iso {C : Category} {a b : C} (f : Hom a b) :=
+  exists g, f ∘ g = id b /\ g ∘ f = id a.
+
+
+Class Equalizer {C : Category} {a b : C} (f g : Hom a b) : Type :=
+  {
+  equalizer_index : C;
+  equalizer : Hom equalizer_index a;
+  equalizer_prop : f ∘ equalizer = g ∘ equalizer
+  }.
+
+Class Pullback {C : Category} {a b c : C} (f : Hom a c) (g : Hom b c) : Type :=
+  {
+  pullback_src : C;
+  pullbackA : Hom pullback_src a;
+  pullbackB : Hom pullback_src b;
+  pullback_prop1 : f ∘ pullbackA = g ∘ pullbackB;
+  pullback_prop2 : forall (x : C) (i : Hom x a) (j : Hom x b),
+      f ∘ i = g ∘ j -> exists! k, i = pullbackA ∘ k /\ j = pullbackB ∘ k
+  }.
+
+
+Open Scope type_scope.
+
+(* Definition make (C D : Category) (a b c d : C) (h : (Hom a b) * (Hom c d)) :
+  Hom (@Obj (Prod_Category C C)) (Prod_Category D D).*)
+
+
+(* produit de deux morphismes en interne *)
+
+
+
+Class Exponential (C : Category) (H : hasProducts C) (a b : C) :=
+  {
+  exponential : C;
+  eval : Hom (H exponential a) b;
+  exponential_prop : forall (c : C) (g : Hom (H c a) b), exists! h : Hom c exponential,
+        eval ∘ (product_morph h (id a))  = g 
+             
+  }.
+
+Definition hasExponentials (C : Category) {H : hasProducts C}:= forall (a b : C), Exponential C H a b.
+(* Type is a category *)
+
+Program Instance Type_Category : Category :=
+  {
+  Obj := Type;
+  Hom := fun a b => a -> b;
+  id a := fun x => x;
+  compose _ _ _ f g := fun x => g (f x);
+  }.
+Next Obligation.
+  reflexivity.
+Qed.
+Next Obligation.
+  reflexivity.
+Qed.
+Next Obligation.
+  reflexivity.
+Qed.
+
+Program Instance Option_Functor : Functor Type_Category Type_Category :=
+  {
+  F := option;
+  fmap := option_map
+  }.
+Next Obligation.
+  intros a.
+  extensionality x.
+  destruct x; reflexivity.
+Qed.
+Next Obligation.
+  intros a b c f g.
+  extensionality x.
+  destruct x; reflexivity.
+Qed.
+
+(* Consider only function with extensional equality (in set ?) *)
+
+Require Import List.
+
+Program Instance List_Functor : Functor Type_Category Type_Category :=
+  {
+  F := list;
+  fmap := List.map
+  }.
+Next Obligation.
+  extensionality x.
+  induction x; [reflexivity | simpl; f_equal; assumption].
+Qed.
+Next Obligation.
+  extensionality x.
+  induction x; [reflexivity | simpl; f_equal; assumption].
+Qed.
+
+
+
+
+Program Instance Product_Prod : Product Type_Category :=
+  {
+  product := prod;
+  π_1 _ _ := fst;
+  π_2 _ _ := snd
+  }.
+
+Next Obligation.
+  exists (fun x => (f x, g x)).
+  split; [auto |].
+  intros x' [Ha Hb]; subst.
+  extensionality y.
+  symmetry; apply surjective_pairing.  
+Qed.
+
+Program Instance CoProduct_Sum : CoProduct Type_Category :=
+  {
+  coproduct := sum;
+  inj_1 _ _ := inl;
+  inj_2 _ _ := inr                 
+  }.
+Next Obligation.
+  exists (fun x => match x with inl y => f y | inr y => g y end).
+  split; [auto|].
+  intros x' [Ha Hb]; subst.
+  extensionality y.
+  destruct y; reflexivity.
+Qed.

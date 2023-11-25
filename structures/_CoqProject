@@ -1,0 +1,10 @@
+-I structures
+-R structures structures
+structures/algebra/Monoid.v
+structures/algebra/cpo.v
+structures/algebra/order.v
+structures/category/Functor.v
+structures/category/Monad.v
+structures/category/Foldable.v
+structures/category/Traversable.v
+structures/category/Option.v

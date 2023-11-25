@@ -1,0 +1,448 @@
+DIGEST 083b4deca7be201256ecea97ced7ce86
+Fstructures.algebra.cpo
+def 28:35 <> relation
+binder 38:38 <> A:1
+R51:54 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R50:50 structures.algebra.cpo <> A:1 var
+R56:59 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R55:55 structures.algebra.cpo <> A:1 var
+def 78:86 <> reflexive
+binder 89:89 <> A:2
+R103:110 structures.algebra.cpo <> relation def
+R112:112 structures.algebra.cpo <> A:2 var
+binder 99:99 <> R:3
+R129:129 structures.algebra.cpo <> A:2 var
+binder 125:125 <> x:4
+R132:132 structures.algebra.cpo <> R:3 var
+R134:134 structures.algebra.cpo <> x:4 var
+R136:136 structures.algebra.cpo <> x:4 var
+def 151:160 <> transitive
+binder 163:163 <> A:5
+R177:184 structures.algebra.cpo <> relation def
+R186:186 structures.algebra.cpo <> A:5 var
+binder 173:173 <> R:6
+R207:207 structures.algebra.cpo <> A:5 var
+binder 199:199 <> x:7
+binder 201:201 <> y:8
+binder 203:203 <> z:9
+R215:218 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R210:210 structures.algebra.cpo <> R:6 var
+R212:212 structures.algebra.cpo <> x:7 var
+R214:214 structures.algebra.cpo <> y:8 var
+R224:227 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R219:219 structures.algebra.cpo <> R:6 var
+R221:221 structures.algebra.cpo <> y:8 var
+R223:223 structures.algebra.cpo <> z:9 var
+R228:228 structures.algebra.cpo <> R:6 var
+R230:230 structures.algebra.cpo <> x:7 var
+R232:232 structures.algebra.cpo <> z:9 var
+def 247:255 <> asymetric
+binder 258:258 <> A:10
+R272:279 structures.algebra.cpo <> relation def
+R281:281 structures.algebra.cpo <> A:10 var
+binder 268:268 <> R:11
+R300:300 structures.algebra.cpo <> A:10 var
+binder 294:294 <> x:12
+binder 296:296 <> y:13
+R308:311 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R303:303 structures.algebra.cpo <> R:11 var
+R305:305 structures.algebra.cpo <> x:12 var
+R307:307 structures.algebra.cpo <> y:13 var
+R317:320 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R312:312 structures.algebra.cpo <> R:11 var
+R314:314 structures.algebra.cpo <> y:13 var
+R316:316 structures.algebra.cpo <> x:12 var
+R322:324 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R321:321 structures.algebra.cpo <> x:12 var
+R325:325 structures.algebra.cpo <> y:13 var
+R339:347 structures.algebra.cpo <> reflexive def
+R339:347 structures.algebra.cpo <> reflexive def
+R366:375 structures.algebra.cpo <> transitive def
+R366:375 structures.algebra.cpo <> transitive def
+R394:402 structures.algebra.cpo <> asymetric def
+R394:402 structures.algebra.cpo <> asymetric def
+rec 442:443 <> po
+proj 492:503 <> po_reflexive
+proj 530:542 <> po_transitive
+proj 566:577 <> po_asymetric
+binder 446:446 <> t:14
+R460:467 structures.algebra.cpo <> relation def
+R469:469 structures.algebra.cpo <> t:14 var
+binder 456:456 <> R:15
+binder 514:514 <> x:17
+R517:517 structures.algebra.cpo <> R:15 var
+R519:519 structures.algebra.cpo <> x:17 var
+R521:521 structures.algebra.cpo <> x:17 var
+R546:555 structures.algebra.cpo <> transitive def
+R557:557 structures.algebra.cpo <> R:15 var
+R581:589 structures.algebra.cpo <> asymetric def
+R591:591 structures.algebra.cpo <> R:15 var
+def 613:620 <> directed
+binder 623:623 <> A:21
+R637:644 structures.algebra.cpo <> relation def
+R646:646 structures.algebra.cpo <> A:21 var
+binder 633:633 <> R:22
+R655:658 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R654:654 structures.algebra.cpo <> A:21 var
+binder 650:650 <> P:23
+R683:683 structures.algebra.cpo <> A:21 var
+binder 677:677 <> x:24
+binder 679:679 <> y:25
+R689:692 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R686:686 structures.algebra.cpo <> P:23 var
+R688:688 structures.algebra.cpo <> x:24 var
+R696:699 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R693:693 structures.algebra.cpo <> P:23 var
+R695:695 structures.algebra.cpo <> y:25 var
+R700:706 Coq.Init.Logic <> ::type_scope:'exists'_x_'..'_x_','_x not
+R708:709 Coq.Init.Logic <> ::type_scope:'exists'_x_'..'_x_','_x not
+binder 707:707 <> z:26
+R713:716 Coq.Init.Logic <> ::type_scope:x_'/\'_x not
+R710:710 structures.algebra.cpo <> P:23 var
+R712:712 structures.algebra.cpo <> z:26 var
+R722:725 Coq.Init.Logic <> ::type_scope:x_'/\'_x not
+R717:717 structures.algebra.cpo <> R:22 var
+R719:719 structures.algebra.cpo <> x:24 var
+R721:721 structures.algebra.cpo <> z:26 var
+R726:726 structures.algebra.cpo <> R:22 var
+R728:728 structures.algebra.cpo <> y:25 var
+R730:730 structures.algebra.cpo <> z:26 var
+def 745:749 <> chain
+binder 752:752 <> A:27
+R766:773 structures.algebra.cpo <> relation def
+R775:775 structures.algebra.cpo <> A:27 var
+binder 762:762 <> R:28
+R784:787 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R783:783 structures.algebra.cpo <> A:27 var
+binder 779:779 <> P:29
+R812:812 structures.algebra.cpo <> A:27 var
+binder 806:806 <> x:30
+binder 808:808 <> y:31
+R818:821 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R815:815 structures.algebra.cpo <> P:29 var
+R817:817 structures.algebra.cpo <> x:30 var
+R825:828 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R822:822 structures.algebra.cpo <> P:29 var
+R824:824 structures.algebra.cpo <> y:31 var
+R834:837 Coq.Init.Logic <> ::type_scope:x_'\/'_x not
+R829:829 structures.algebra.cpo <> R:28 var
+R831:831 structures.algebra.cpo <> x:30 var
+R833:833 structures.algebra.cpo <> y:31 var
+R838:838 structures.algebra.cpo <> R:28 var
+R840:840 structures.algebra.cpo <> y:31 var
+R842:842 structures.algebra.cpo <> x:30 var
+prf 852:865 <> chain_directed
+binder 876:876 <> A:32
+binder 878:878 <> R:33
+binder 880:880 <> P:34
+R889:892 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R883:884 structures.algebra.cpo <> po rec
+R886:886 structures.algebra.cpo <> A:32 var
+R888:888 structures.algebra.cpo <> R:33 var
+R904:907 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R893:897 structures.algebra.cpo <> chain def
+R899:899 structures.algebra.cpo <> A:32 var
+R901:901 structures.algebra.cpo <> R:33 var
+R903:903 structures.algebra.cpo <> P:34 var
+R908:915 structures.algebra.cpo <> directed def
+R917:917 structures.algebra.cpo <> A:32 var
+R919:919 structures.algebra.cpo <> R:33 var
+R921:921 structures.algebra.cpo <> P:34 var
+def 1109:1111 <> lub
+binder 1114:1114 <> A:35
+R1128:1135 structures.algebra.cpo <> relation def
+R1137:1137 structures.algebra.cpo <> A:35 var
+binder 1124:1124 <> R:36
+R1146:1149 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R1145:1145 structures.algebra.cpo <> A:35 var
+binder 1141:1141 <> P:37
+R1161:1161 structures.algebra.cpo <> A:35 var
+binder 1157:1157 <> a:38
+R1169:1169 Coq.Init.Logic <> ::type_scope:x_'/\'_x not
+R1192:1197 Coq.Init.Logic <> ::type_scope:x_'/\'_x not
+R1241:1241 Coq.Init.Logic <> ::type_scope:x_'/\'_x not
+binder 1177:1177 <> x:39
+R1183:1186 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R1180:1180 structures.algebra.cpo <> P:37 var
+R1182:1182 structures.algebra.cpo <> x:39 var
+R1187:1187 structures.algebra.cpo <> R:36 var
+R1189:1189 structures.algebra.cpo <> x:39 var
+R1191:1191 structures.algebra.cpo <> a:38 var
+binder 1205:1205 <> b:40
+R1208:1208 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R1231:1235 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+binder 1216:1216 <> x:41
+R1222:1225 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R1219:1219 structures.algebra.cpo <> P:37 var
+R1221:1221 structures.algebra.cpo <> x:41 var
+R1226:1226 structures.algebra.cpo <> R:36 var
+R1228:1228 structures.algebra.cpo <> x:41 var
+R1230:1230 structures.algebra.cpo <> b:40 var
+R1236:1236 structures.algebra.cpo <> R:36 var
+R1238:1238 structures.algebra.cpo <> a:38 var
+R1240:1240 structures.algebra.cpo <> b:40 var
+prf 1251:1264 <> po_lub_unicity
+binder 1278:1278 <> A:42
+R1292:1299 structures.algebra.cpo <> relation def
+R1301:1301 structures.algebra.cpo <> A:42 var
+binder 1288:1288 <> R:43
+R1310:1311 structures.algebra.cpo <> po rec
+R1313:1313 structures.algebra.cpo <> A:42 var
+R1315:1315 structures.algebra.cpo <> R:43 var
+binder 1305:1306 <> PO:44
+R1324:1327 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R1323:1323 structures.algebra.cpo <> A:42 var
+binder 1319:1319 <> P:45
+R1341:1341 structures.algebra.cpo <> A:42 var
+binder 1335:1335 <> a:46
+binder 1337:1337 <> b:47
+R1360:1363 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R1349:1351 structures.algebra.cpo <> lub def
+R1353:1353 structures.algebra.cpo <> A:42 var
+R1355:1355 structures.algebra.cpo <> R:43 var
+R1357:1357 structures.algebra.cpo <> P:45 var
+R1359:1359 structures.algebra.cpo <> a:46 var
+R1375:1378 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R1364:1366 structures.algebra.cpo <> lub def
+R1368:1368 structures.algebra.cpo <> A:42 var
+R1370:1370 structures.algebra.cpo <> R:43 var
+R1372:1372 structures.algebra.cpo <> P:45 var
+R1374:1374 structures.algebra.cpo <> b:47 var
+R1380:1382 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R1379:1379 structures.algebra.cpo <> a:46 var
+R1383:1383 structures.algebra.cpo <> b:47 var
+R1516:1527 structures.algebra.cpo <> po_asymetric proj
+R1516:1527 structures.algebra.cpo <> po_asymetric proj
+rec 1551:1554 <> dcpo
+proj 1604:1617 <> dcpo_reflexive
+proj 1640:1654 <> dcpo_transitive
+proj 1678:1691 <> dcpo_asymetric
+proj 1714:1721 <> dcpo_lub
+binder 1557:1557 <> t:48
+R1571:1578 structures.algebra.cpo <> relation def
+R1580:1580 structures.algebra.cpo <> t:48 var
+binder 1567:1567 <> R:49
+R1621:1629 structures.algebra.cpo <> reflexive def
+R1631:1631 structures.algebra.cpo <> R:49 var
+R1658:1667 structures.algebra.cpo <> transitive def
+R1669:1669 structures.algebra.cpo <> R:49 var
+R1695:1703 structures.algebra.cpo <> asymetric def
+R1705:1705 structures.algebra.cpo <> R:49 var
+binder 1732:1732 <> P:54
+R1749:1752 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R1735:1742 structures.algebra.cpo <> directed def
+R1744:1744 structures.algebra.cpo <> t:48 var
+R1746:1746 structures.algebra.cpo <> R:49 var
+R1748:1748 structures.algebra.cpo <> P:54 var
+R1753:1759 Coq.Init.Logic <> ::type_scope:'exists'_x_'..'_x_','_x not
+R1761:1762 Coq.Init.Logic <> ::type_scope:'exists'_x_'..'_x_','_x not
+binder 1760:1760 <> a:55
+R1763:1765 structures.algebra.cpo <> lub def
+R1767:1767 structures.algebra.cpo <> t:48 var
+R1769:1769 structures.algebra.cpo <> R:49 var
+R1771:1771 structures.algebra.cpo <> P:54 var
+R1773:1773 structures.algebra.cpo <> a:55 var
+rec 1790:1792 <> cpo
+proj 1851:1863 <> cpo_reflexive
+proj 1886:1899 <> cpo_transitive
+proj 1923:1935 <> cpo_asymetric
+proj 1958:1968 <> cpo_bot_inf
+proj 1997:2003 <> cpo_lub
+binder 1795:1795 <> t:57
+R1809:1816 structures.algebra.cpo <> relation def
+R1818:1818 structures.algebra.cpo <> t:57 var
+binder 1805:1805 <> R:58
+R1828:1828 structures.algebra.cpo <> t:57 var
+binder 1822:1824 <> bot:59
+R1867:1875 structures.algebra.cpo <> reflexive def
+R1877:1877 structures.algebra.cpo <> R:58 var
+R1903:1912 structures.algebra.cpo <> transitive def
+R1914:1914 structures.algebra.cpo <> R:58 var
+R1939:1947 structures.algebra.cpo <> asymetric def
+R1949:1949 structures.algebra.cpo <> R:58 var
+binder 1979:1979 <> y:64
+R1982:1982 structures.algebra.cpo <> R:58 var
+R1984:1986 structures.algebra.cpo <> bot:59 var
+R1988:1988 structures.algebra.cpo <> y:64 var
+binder 2014:2014 <> P:66
+R2031:2034 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R2017:2024 structures.algebra.cpo <> directed def
+R2026:2026 structures.algebra.cpo <> t:57 var
+R2028:2028 structures.algebra.cpo <> R:58 var
+R2030:2030 structures.algebra.cpo <> P:66 var
+R2035:2041 Coq.Init.Logic <> ::type_scope:'exists'_x_'..'_x_','_x not
+R2043:2044 Coq.Init.Logic <> ::type_scope:'exists'_x_'..'_x_','_x not
+binder 2042:2042 <> a:67
+R2045:2047 structures.algebra.cpo <> lub def
+R2049:2049 structures.algebra.cpo <> t:57 var
+R2051:2051 structures.algebra.cpo <> R:58 var
+R2053:2053 structures.algebra.cpo <> P:66 var
+R2055:2055 structures.algebra.cpo <> a:67 var
+prf 2071:2076 <> cpo_po
+binder 2087:2087 <> A:69
+binder 2089:2089 <> R:70
+binder 2091:2093 <> bot:71
+R2107:2110 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R2096:2098 structures.algebra.cpo <> cpo rec
+R2100:2100 structures.algebra.cpo <> A:69 var
+R2102:2102 structures.algebra.cpo <> R:70 var
+R2104:2106 structures.algebra.cpo <> bot:71 var
+R2111:2112 structures.algebra.cpo <> po rec
+R2114:2114 structures.algebra.cpo <> A:69 var
+R2116:2116 structures.algebra.cpo <> R:70 var
+def 2567:2575 <> monotonic
+binder 2577:2577 <> t:72
+binder 2579:2579 <> R:73
+binder 2581:2583 <> bot:74
+binder 2585:2586 <> t':75
+binder 2588:2589 <> R':76
+binder 2591:2594 <> bot':77
+R2601:2603 structures.algebra.cpo <> cpo rec
+R2605:2605 structures.algebra.cpo <> t:72 var
+R2607:2607 structures.algebra.cpo <> R:73 var
+R2609:2611 structures.algebra.cpo <> bot:74 var
+binder 2597:2597 <> S:78
+R2620:2622 structures.algebra.cpo <> cpo rec
+R2624:2625 structures.algebra.cpo <> t':75 var
+R2627:2628 structures.algebra.cpo <> R':76 var
+R2630:2633 structures.algebra.cpo <> bot':77 var
+binder 2615:2616 <> S':79
+R2642:2645 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R2641:2641 structures.algebra.cpo <> t:72 var
+R2646:2647 structures.algebra.cpo <> t':75 var
+binder 2637:2637 <> f:80
+binder 2662:2662 <> x:81
+binder 2664:2664 <> y:82
+R2672:2675 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R2667:2667 structures.algebra.cpo <> R:73 var
+R2669:2669 structures.algebra.cpo <> x:81 var
+R2671:2671 structures.algebra.cpo <> y:82 var
+R2676:2677 structures.algebra.cpo <> R':76 var
+R2680:2680 structures.algebra.cpo <> f:80 var
+R2682:2682 structures.algebra.cpo <> x:81 var
+R2686:2686 structures.algebra.cpo <> f:80 var
+R2688:2688 structures.algebra.cpo <> y:82 var
+def 2704:2708 <> image
+binder 2711:2711 <> A:83
+binder 2713:2713 <> B:84
+R2728:2731 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R2727:2727 structures.algebra.cpo <> A:83 var
+binder 2723:2723 <> P:85
+R2744:2747 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R2743:2743 structures.algebra.cpo <> A:83 var
+R2748:2748 structures.algebra.cpo <> B:84 var
+binder 2739:2739 <> f:86
+R2755:2758 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R2754:2754 structures.algebra.cpo <> B:84 var
+binder 2774:2774 <> y:87
+R2779:2785 Coq.Init.Logic <> ::type_scope:'exists'_x_'..'_x_','_x not
+R2787:2788 Coq.Init.Logic <> ::type_scope:'exists'_x_'..'_x_','_x not
+binder 2786:2786 <> x:88
+R2792:2795 Coq.Init.Logic <> ::type_scope:x_'/\'_x not
+R2789:2789 structures.algebra.cpo <> P:85 var
+R2791:2791 structures.algebra.cpo <> x:88 var
+R2799:2801 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R2796:2796 structures.algebra.cpo <> f:86 var
+R2798:2798 structures.algebra.cpo <> x:88 var
+R2802:2802 structures.algebra.cpo <> y:87 var
+def 2817:2826 <> continuous
+binder 2828:2828 <> t:89
+binder 2830:2830 <> R:90
+binder 2832:2834 <> bot:91
+binder 2836:2837 <> t':92
+binder 2839:2840 <> R':93
+binder 2842:2845 <> bot':94
+R2852:2854 structures.algebra.cpo <> cpo rec
+R2856:2856 structures.algebra.cpo <> t:89 var
+R2858:2858 structures.algebra.cpo <> R:90 var
+R2860:2862 structures.algebra.cpo <> bot:91 var
+binder 2848:2848 <> S:95
+R2871:2873 structures.algebra.cpo <> cpo rec
+R2875:2876 structures.algebra.cpo <> t':92 var
+R2878:2879 structures.algebra.cpo <> R':93 var
+R2881:2884 structures.algebra.cpo <> bot':94 var
+binder 2866:2867 <> S':96
+R2893:2896 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R2892:2892 structures.algebra.cpo <> t:89 var
+R2897:2898 structures.algebra.cpo <> t':92 var
+binder 2888:2888 <> f:97
+binder 2913:2913 <> P:98
+binder 2915:2916 <> P':99
+binder 2918:2918 <> a:100
+binder 2920:2920 <> b:101
+R2962:2969 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R2927:2935 structures.algebra.cpo <> monotonic def
+R2937:2937 structures.algebra.cpo <> t:89 var
+R2939:2939 structures.algebra.cpo <> R:90 var
+R2941:2943 structures.algebra.cpo <> bot:91 var
+R2945:2946 structures.algebra.cpo <> t':92 var
+R2948:2949 structures.algebra.cpo <> R':93 var
+R2951:2954 structures.algebra.cpo <> bot':94 var
+R2956:2956 structures.algebra.cpo <> S:95 var
+R2958:2959 structures.algebra.cpo <> S':96 var
+R2961:2961 structures.algebra.cpo <> f:97 var
+R2989:2996 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R2984:2986 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R2970:2974 structures.algebra.cpo <> image def
+R2976:2976 structures.algebra.cpo <> t:89 var
+R2978:2979 structures.algebra.cpo <> t':92 var
+R2981:2981 structures.algebra.cpo <> P:98 var
+R2983:2983 structures.algebra.cpo <> f:97 var
+R2987:2988 structures.algebra.cpo <> P':99 var
+R3008:3015 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R2997:2999 structures.algebra.cpo <> lub def
+R3001:3001 structures.algebra.cpo <> t:89 var
+R3003:3003 structures.algebra.cpo <> R:90 var
+R3005:3005 structures.algebra.cpo <> P:98 var
+R3007:3007 structures.algebra.cpo <> a:100 var
+R3030:3037 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R3016:3018 structures.algebra.cpo <> lub def
+R3020:3021 structures.algebra.cpo <> t':92 var
+R3023:3024 structures.algebra.cpo <> R':93 var
+R3026:3027 structures.algebra.cpo <> P':99 var
+R3029:3029 structures.algebra.cpo <> b:101 var
+R3041:3043 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R3038:3038 structures.algebra.cpo <> f:97 var
+R3040:3040 structures.algebra.cpo <> a:100 var
+R3044:3044 structures.algebra.cpo <> b:101 var
+def 3076:3077 <> fp
+binder 3080:3080 <> A:102
+R3095:3098 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R3094:3094 structures.algebra.cpo <> A:102 var
+R3099:3099 structures.algebra.cpo <> A:102 var
+binder 3090:3090 <> f:103
+R3107:3107 structures.algebra.cpo <> A:102 var
+binder 3103:3103 <> a:104
+R3125:3127 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R3122:3122 structures.algebra.cpo <> f:103 var
+R3124:3124 structures.algebra.cpo <> a:104 var
+R3128:3128 structures.algebra.cpo <> a:104 var
+def 3143:3145 <> lfp
+binder 3147:3147 <> t:105
+binder 3149:3149 <> R:106
+binder 3151:3153 <> bot:107
+R3160:3162 structures.algebra.cpo <> cpo rec
+R3164:3164 structures.algebra.cpo <> t:105 var
+R3166:3166 structures.algebra.cpo <> R:106 var
+R3168:3170 structures.algebra.cpo <> bot:107 var
+binder 3156:3156 <> S:108
+R3179:3182 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R3178:3178 structures.algebra.cpo <> t:105 var
+R3183:3183 structures.algebra.cpo <> t:105 var
+binder 3174:3174 <> f:109
+R3191:3191 structures.algebra.cpo <> t:105 var
+binder 3187:3187 <> a:110
+R3214:3217 Coq.Init.Logic <> ::type_scope:x_'/\'_x not
+R3206:3207 structures.algebra.cpo <> fp def
+R3209:3209 structures.algebra.cpo <> t:105 var
+R3211:3211 structures.algebra.cpo <> f:109 var
+R3213:3213 structures.algebra.cpo <> a:110 var
+binder 3225:3225 <> b:111
+R3236:3239 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R3228:3229 structures.algebra.cpo <> fp def
+R3231:3231 structures.algebra.cpo <> t:105 var
+R3233:3233 structures.algebra.cpo <> f:109 var
+R3235:3235 structures.algebra.cpo <> b:111 var
+R3240:3240 structures.algebra.cpo <> R:106 var
+R3242:3242 structures.algebra.cpo <> a:110 var
+R3244:3244 structures.algebra.cpo <> b:111 var

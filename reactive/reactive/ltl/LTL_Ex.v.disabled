@@ -1,0 +1,243 @@
+Require Import FRP.Stream.
+Require Import FRP.LTL.
+
+CoFixpoint repeat {A : Set} (a : A) : stream A :=
+    seq a (repeat a).
+
+Lemma l1 : forall (A : Set) (a : A),
+    immediate (eq a) (repeat a).
+Proof.
+    intros A a.
+    reflexivity.
+Qed.
+
+#[export] Hint Unfold next : frp.
+#[export] Hint Unfold immediate : frp.
+
+Lemma l2 : forall (A : Set) (a : A),
+    next (immediate (eq a)) (repeat a).
+Proof.
+    intros A a.
+    auto with frp.
+Qed.
+
+CoFixpoint nats (n : nat): stream nat :=
+    seq n (nats (S n)).
+
+Lemma l3 : finally (immediate (fun x => x = 10)) (nats 0).
+Proof.
+    unfold finally.
+    do 10 (constructor 2; [constructor | simpl]).
+    constructor 1.
+    reflexivity.
+Qed.
+
+(* forall n, P n -> Always (now P) *)
+(* always pair ou next pair *)
+(* next n > n *)
+
+(* 
+    immediate (fun x => x = n) -> 
+    next (immediate (fun x => x = S n))
+*)
+
+(* Fixpoint nth {A : Set} (s : stream A) (n : nat) : A :=
+    match n with 
+        | 0 => hd s
+        | S n => nth (tl s) n
+    end. *)
+
+Fixpoint tln {A : Set} (s : stream A) (n : nat) : stream A :=
+    match n with 
+        | 0 => s 
+        | S n => tln (tl s) n
+    end.
+
+Definition nth {A : Set} (s : stream A) (n : nat) : A :=
+    hd (tln s n).
+
+Lemma tln_prop : forall {A : Set} (s : stream A) (n : nat),
+    tln s (S n) = tln (tl s) n.
+Proof.
+    intros A s n.
+    reflexivity.
+Qed.
+
+Require Import Lia.
+
+Lemma until_tln : 
+    forall (A : Set) (P Q : formula A) (s : stream A),
+    until P Q s -> 
+    exists n, 
+        (forall m, m < n -> P (tln s m)) /\
+        Q (tln s n).
+Proof.
+    intros A P Q s H.
+    induction H.
+    -   exists 0.
+        split; [lia | assumption].
+    -   destruct IHuntil as [n [Ha Hb]].
+        +   assert (forall m : nat, m < S n -> P (tln s m)).
+            {
+                intros [ | m] Hc.
+                --  apply H.
+                --  apply Ha; lia.
+            }
+            now exists (S n).
+Qed.
+
+Lemma until_tln_rev : 
+    forall (A : Set) (P Q : formula A) (s : stream A),
+    (exists n, 
+        (forall m, m < n -> P (tln s m)) /\
+        Q (tln s n))
+        ->
+    until P Q s.
+Proof.
+    intros A P Q s [n [Ha Hb]].
+    revert s Ha Hb.
+    induction n; intros.
+    -   now constructor 1.
+    -   assert (P s) by (apply (Ha 0); lia).
+        assert (until P Q (tl s)).
+        {
+            assert (forall m : nat, m < n -> P (tln (tl s) m)).
+            {
+                intros m Hc.
+                apply (Ha (S m)); lia.
+            }
+            now apply IHn.
+        }
+        now constructor 2.
+Qed.
+
+Lemma finally_tln : forall (A : Set) (P Q : formula A) (s : stream A),
+    finally P s -> 
+    exists n, P (tln s n).
+Proof.
+    intros.
+    apply until_tln in H.
+    destruct H as [n [Ha Hb]].
+    now exists n.
+Qed.
+
+Lemma finally_tln_rev  : forall (A : Set) (P : formula A) (s : stream A),
+    (exists n, P (tln s n)) -> finally P s.
+Proof.
+    intros.
+    unfold finally.
+    apply until_tln_rev.
+    destruct H as [n Ha].
+    exists n.
+    split.
+    intros.
+    constructor.
+    assumption.
+Qed.
+
+Lemma choice : forall {A : Set} (P : formula A) (s : stream A),
+    P s \/ notS P s.
+Admitted.
+
+
+(* si release P Q, on a toujours Q en 0 *)
+Lemma release_tln : forall (A : Set) (P Q : formula A) (s : stream A),
+    release Q P s -> 
+        (exists n, 
+            (forall m, m <= n -> P (tln s m)) /\ Q (tln s n))
+        \/ (forall n, P (tln s n)).
+Proof.
+    intros.
+    unfold release in H.
+    unfold notS in H.
+    assert (exists n, (forall m, m < n -> P (tln s m)) /\ (notS P) (tln s n)) as [n [Ha Hb]] by admit.
+    destruct n.
+    -   admit. (* impossible on doit avoir P au moins en 0 *)
+    -   left.
+        exists n.
+        split.
+        +   intros.
+            generalize (Ha m); intro.
+            apply H1.
+            lia.
+        +   destruct (choice Q (tln s n)).
+            assumption.
+            elim H.
+            
+    assert (Q (tln s n)).
+    {
+        destruct (choice Q (tln s n)).
+        assumption.
+        assert (until (fun s0 : stream A => P s0 -> False)
+          (fun s0 : stream A => Q s0 -> False) s).
+          {
+            apply until_tln_rev.
+            exists n.
+            split.
+            apply Ha.
+            apply H0.
+          }
+          exfalso.
+          apply H.
+          assumption.
+    }
+
+(* foralln P (tln n s) \/ exists n, not P (tl n s) *)
+Lemma l4 : forall n m, nth (nats m) n = m + n.
+Proof.
+    induction n.
+    -   intro.
+        unfold nth.
+        simpl.
+        lia.
+    -   intro m.
+        replace (m + S n) with (S (m + n)) by lia.
+        apply IHn.
+Qed.
+
+Lemma l5 : forall n, nth (nats 0) n = n.
+Proof.
+    intros.
+    apply l4.
+Qed.
+
+Lemma l6 : forall (n : nat), 
+    finally (immediate (fun x => x = n)) (nats 0).
+Proof.
+    intro n.
+    apply finally_tln_rev.
+    exists n.
+    apply (l4 n 0).
+Qed.
+
+(* refaire les preuves directement avec LTL en généralisant m*)
+
+Lemma l7 : forall {A : Set} (P Q : formula A) (s : stream A),
+    Q s \/ (P s /\ next (until P Q) s) -> until P Q s.
+Proof.
+    intros A P Q s H.
+    destruct H.
+    constructor 1.
+    assumption.
+    destruct H.
+    constructor 2.
+    assumption.
+    unfold next in H0.
+    assumption.
+Qed.
+
+Lemma l8 : forall {A : Set} (P : formula A) (s : stream A),
+    P s -> next (globally P) s -> globally P s. 
+Proof.
+    intros A P s Ha Hb.
+    unfold globally.
+
+(* l'élément suivant est toujours le successeur *)
+Lemma l7 : forall n,
+    globally (imp (immediate (eq n)) (next (immediate (eq (S n))))) (nats 0).
+Proof.
+    intro.
+    unfold globally.        
+
+(* arr : λ x -> (y, arr) : next, ...*)
+

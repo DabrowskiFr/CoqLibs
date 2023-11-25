@@ -1,0 +1,126 @@
+Require Import Stream.
+Require Import Bisimilarity.
+Require Import Coq.Program.Basics.
+
+Open Scope stream_scope.
+Open Scope program_scope.
+(** *** Examples *)
+(** Example 1: *)
+(** We prove that a === true b where a = true false a and b = false true b *)
+
+CoFixpoint a : stream bool := true ⋅ false ⋅ a.
+
+CoFixpoint b : stream bool := false ⋅ true ⋅ b.
+
+Inductive R : stream bool -> stream bool -> Prop :=
+    | Ra : R a (true ⋅ b)
+    | Rb : R (false ⋅ a) b.
+
+Fact bisimulation_R : bisimulation R.
+Proof.
+    constructor.
+    -   intros s1 s2 H.
+        destruct H; reflexivity.
+    -   intros s1 s2 H.
+        destruct H.
+        +   exact Rb.
+        +   exact Ra.
+Qed.
+
+Lemma example1 : a ∼ true ⋅ b.
+Proof.
+    exact (bisimulation_gfp _ bisimulation_R _ _ Ra).
+Qed.
+
+(** Example 2 *)
+(** We prove that ones === oneones *)
+
+CoFixpoint ones : stream nat := 1 ⋅ ones.
+
+CoFixpoint oneones : stream nat := 1 ⋅ 1 ⋅ oneones.
+
+Inductive R2 : stream nat -> stream nat -> Prop :=
+    | R2a : R2 ones oneones
+    | R2b : R2 ones (1 ⋅ oneones).
+
+Fact bisimulation_R2 : bisimulation R2.
+Proof.
+    constructor; intros _ _ [ | ]; auto using R2.
+Qed.
+
+Lemma example2 : ones ∼ oneones.
+Proof.
+    exact (bisimulation_gfp _ bisimulation_R2 _ _ R2a).
+Qed.
+
+(** Example 3 *)
+(** We prove that ones = map f (tl s) *)
+
+CoFixpoint map {A B : Set} (f : A -> B) (s : stream A) : stream B :=
+    (f (hd s)) ⋅ (map f (tl s)).
+
+Inductive R3 : stream nat -> stream nat -> Prop :=
+    | R3a : R3 (map id ones) ones.
+
+Fact bisimulation_R3 : bisimulation R3.
+Proof.
+    constructor; intros s1 s2 [ ]; auto using R3.
+Qed.
+
+Lemma example3 : map id ones ∼ ones.
+Proof.
+    exact (bisimulation_gfp _ bisimulation_R3 _ _ R3a).
+Qed.
+
+(* Equivalence de fonction : f ~ g ssi forall s, f s === g s *)
+
+(** Examples 4 et 5 *)
+(** On montre que (stream, map) est un foncteur pour la relation 
+    d'équivalence ~ définie par f ~ g ssi forall s, f s === g s *)
+(** - forall s, map id ~ id *)
+(** - forall s, map (g ∘ f) ~ (map f ∘ map g) *)
+
+Inductive R4 (A : Set) : stream A -> stream A -> Prop :=
+    R4a : forall s, R4 A (map id s) s.
+
+Lemma bisimulation_R4 : forall (A : Set), bisimulation (R4 A).
+Proof.
+    constructor.
+    -   intros s1 s2 []; auto.
+    -   intros s1 s2 H.
+        inversion H; subst.
+        simpl.
+        exact (R4a A (tl s2)).
+Qed.
+
+
+Lemma example4 : forall {A : Set} (s : stream A), 
+    (map id s) ∼ id s.
+Proof.
+    intros A s.
+    exact (bisimulation_gfp _ (bisimulation_R4 A) _ _ (R4a A s)).
+Qed.
+
+
+Inductive R5 (C : Set) : stream C -> stream C -> Prop :=
+    R5a : forall (A B : Set) (s : stream A) (f : A -> B) (g : B -> C), 
+    R5 C ((map g ∘ map f) s) (map (g ∘ f) s).
+
+Fact bisimulation_R5 : forall (C : Set), bisimulation (R5 C).
+Proof.
+    constructor.
+    -   intros s1 s2 [].
+        reflexivity.
+    -   intros s1 s2 [].
+        simpl.
+        apply R5a.
+Qed.
+
+Lemma example5 : forall (A B C : Set) (f : A -> B) (g : B -> C) (s : stream A),
+    (map g ∘ map f) s ∼ map (g ∘ f) s.
+Proof.
+    intros.
+    apply (bisimulation_gfp _ (bisimulation_R5 C)). 
+    apply R5a.
+Qed.
+

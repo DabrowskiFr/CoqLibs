@@ -1,0 +1,390 @@
+DIGEST 8de10c2f24ab5b6ac9c59315c8be13aa
+Fstructures.category.Option
+R15:32 Coq.Program.Basics <> <> lib
+R51:84 Coq.Logic.FunctionalExtensionality <> <> lib
+R102:110 Coq.Classes.Morphisms <> <> lib
+R156:159 Coq.Unicode.Utf8 <> <> lib
+R202:208 structures.category.Functor <> <> lib
+R251:255 structures.category.Monad <> <> lib
+def 270:280 <> fmap_option
+binder 283:283 <> A:1
+binder 285:285 <> B:2
+R301:304 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R300:300 structures.category.Option <> A:1 var
+R305:305 structures.category.Option <> B:2 var
+binder 296:296 <> f:3
+R313:318 Coq.Init.Datatypes <> option ind
+R320:320 structures.category.Option <> A:1 var
+binder 309:309 <> x:4
+R334:334 structures.category.Option <> x:4 var
+R341:344 Coq.Init.Datatypes <> Some constr
+R351:354 Coq.Init.Datatypes <> Some constr
+R357:357 structures.category.Option <> f:3 var
+R364:367 Coq.Init.Datatypes <> None constr
+R372:375 Coq.Init.Datatypes <> None constr
+prf 389:411 <> functor_identity_option
+binder 423:423 <> A:6
+R453:455 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R434:444 structures.category.Option <> fmap_option def
+R448:449 structures.category.Functor <> id def
+R451:451 structures.category.Option <> A:6 var
+R456:457 structures.category.Functor <> id def
+R487:511 Coq.Logic.FunctionalExtensionality <> functional_extensionality thm
+R487:511 Coq.Logic.FunctionalExtensionality <> functional_extensionality thm
+prf 553:574 <> functor_compose_option
+binder 588:588 <> A:7
+binder 590:590 <> B:8
+binder 592:592 <> C:9
+R607:610 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R606:606 structures.category.Option <> B:8 var
+R611:611 structures.category.Option <> C:9 var
+binder 602:602 <> f:10
+R620:623 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R619:619 structures.category.Option <> A:7 var
+R624:624 structures.category.Option <> B:8 var
+binder 615:615 <> g:11
+R632:632 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R664:667 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R646:650 structures.category.Functor <> :::x_'∘'_x not
+R633:643 structures.category.Option <> fmap_option def
+R645:645 structures.category.Option <> f:10 var
+R651:661 structures.category.Option <> fmap_option def
+R663:663 structures.category.Option <> g:11 var
+R668:678 structures.category.Option <> fmap_option def
+R682:686 structures.category.Functor <> :::x_'∘'_x not
+R681:681 structures.category.Option <> f:10 var
+R687:687 structures.category.Option <> g:11 var
+R726:750 Coq.Logic.FunctionalExtensionality <> functional_extensionality thm
+R726:750 Coq.Logic.FunctionalExtensionality <> functional_extensionality thm
+R762:768 structures.category.Functor <> compose def
+inst 821:834 <> functor_option
+R838:844 structures.category.Functor <> Functor class
+R846:851 Coq.Init.Datatypes <> option ind
+R952:966 structures.category.Functor <> functor_compose meth
+R898:913 structures.category.Functor <> functor_identity meth
+R864:867 structures.category.Functor <> fmap meth
+binder 869:869 <> A:12
+binder 871:871 <> B:13
+R877:887 structures.category.Option <> fmap_option def
+R889:889 structures.category.Option <> A:12 var
+R891:891 structures.category.Option <> B:13 var
+binder 915:915 <> A:14
+R921:943 structures.category.Option <> functor_identity_option thm
+R945:945 structures.category.Option <> A:14 var
+binder 968:968 <> A:15
+binder 970:970 <> B:16
+binder 972:972 <> C:17
+R978:999 structures.category.Option <> functor_compose_option thm
+R1001:1001 structures.category.Option <> A:15 var
+R1003:1003 structures.category.Option <> B:16 var
+R1005:1005 structures.category.Option <> C:17 var
+def 1024:1032 <> ap_option
+binder 1035:1035 <> A:18
+binder 1037:1037 <> B:19
+R1052:1057 Coq.Init.Datatypes <> option ind
+R1061:1064 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R1060:1060 structures.category.Option <> A:18 var
+R1065:1065 structures.category.Option <> B:19 var
+binder 1048:1048 <> f:20
+R1074:1079 Coq.Init.Datatypes <> option ind
+R1081:1081 structures.category.Option <> A:18 var
+binder 1070:1070 <> x:21
+R1086:1091 Coq.Init.Datatypes <> option ind
+R1093:1093 structures.category.Option <> B:19 var
+R1108:1108 Coq.Init.Datatypes <> ::core_scope:'('_x_','_x_','_'..'_','_x_')' not
+R1110:1111 Coq.Init.Datatypes <> ::core_scope:'('_x_','_x_','_'..'_','_x_')' not
+R1113:1113 Coq.Init.Datatypes <> ::core_scope:'('_x_','_x_','_'..'_','_x_')' not
+R1109:1109 structures.category.Option <> f:20 var
+R1112:1112 structures.category.Option <> x:21 var
+R1126:1126 Coq.Init.Datatypes <> ::core_scope:'('_x_','_x_','_'..'_','_x_')' not
+R1133:1134 Coq.Init.Datatypes <> ::core_scope:'('_x_','_x_','_'..'_','_x_')' not
+R1141:1141 Coq.Init.Datatypes <> ::core_scope:'('_x_','_x_','_'..'_','_x_')' not
+R1127:1130 Coq.Init.Datatypes <> Some constr
+R1135:1138 Coq.Init.Datatypes <> Some constr
+R1146:1149 Coq.Init.Datatypes <> Some constr
+R1152:1152 structures.category.Option <> f:20 var
+R1154:1154 structures.category.Option <> x:21 var
+R1168:1171 Coq.Init.Datatypes <> None constr
+prf 1190:1216 <> applicative_identity_option
+binder 1227:1227 <> A:22
+R1234:1239 Coq.Init.Datatypes <> option ind
+R1241:1241 structures.category.Option <> A:22 var
+binder 1230:1230 <> x:23
+R1266:1268 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R1245:1253 structures.category.Option <> ap_option def
+R1265:1265 structures.category.Option <> x:23 var
+R1256:1259 Coq.Init.Datatypes <> Some constr
+R1261:1262 structures.category.Functor <> id def
+R1269:1269 structures.category.Option <> x:23 var
+prf 1318:1343 <> applicative_compose_option
+R1349:1353 Coq.Unicode.Utf8_core <> ::type_scope:'∀'_x_'..'_x_','_x not
+R1425:1432 Coq.Unicode.Utf8_core <> ::type_scope:'∀'_x_'..'_x_','_x not
+binder 1354:1354 <> a:24
+binder 1356:1356 <> b:25
+binder 1358:1358 <> c:26
+R1373:1378 Coq.Init.Datatypes <> option ind
+R1382:1385 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R1381:1381 structures.category.Option <> b:25 var
+R1386:1386 structures.category.Option <> c:26 var
+binder 1369:1369 <> u:27
+R1395:1400 Coq.Init.Datatypes <> option ind
+R1404:1407 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R1403:1403 structures.category.Option <> a:24 var
+R1408:1408 structures.category.Option <> b:25 var
+binder 1391:1391 <> v:28
+R1417:1422 Coq.Init.Datatypes <> option ind
+R1424:1424 structures.category.Option <> a:24 var
+binder 1413:1413 <> w:29
+R1487:1489 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R1433:1441 structures.category.Option <> ap_option def
+R1486:1486 structures.category.Option <> w:29 var
+R1444:1452 structures.category.Option <> ap_option def
+R1483:1483 structures.category.Option <> v:28 var
+R1455:1463 structures.category.Option <> ap_option def
+R1480:1480 structures.category.Option <> u:27 var
+R1466:1469 Coq.Init.Datatypes <> Some constr
+R1471:1477 structures.category.Functor <> compose def
+R1490:1498 structures.category.Option <> ap_option def
+R1503:1511 structures.category.Option <> ap_option def
+R1515:1515 structures.category.Option <> w:29 var
+R1513:1513 structures.category.Option <> v:28 var
+R1500:1500 structures.category.Option <> u:27 var
+prf 1571:1601 <> applicative_homomorphism_option
+R1607:1611 Coq.Unicode.Utf8_core <> ::type_scope:'∀'_x_'..'_x_','_x not
+R1643:1645 Coq.Unicode.Utf8_core <> ::type_scope:'∀'_x_'..'_x_','_x not
+binder 1612:1612 <> a:30
+binder 1614:1614 <> b:31
+R1630:1633 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R1629:1629 structures.category.Option <> a:30 var
+R1634:1634 structures.category.Option <> b:31 var
+binder 1625:1625 <> f:32
+R1642:1642 structures.category.Option <> a:30 var
+binder 1638:1638 <> x:33
+R1673:1675 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R1646:1654 structures.category.Option <> ap_option def
+R1666:1669 Coq.Init.Datatypes <> Some constr
+R1671:1671 structures.category.Option <> x:33 var
+R1657:1660 Coq.Init.Datatypes <> Some constr
+R1662:1662 structures.category.Option <> f:32 var
+R1676:1679 Coq.Init.Datatypes <> Some constr
+R1682:1682 structures.category.Option <> f:32 var
+R1684:1684 structures.category.Option <> x:33 var
+prf 1722:1751 <> applicative_interchange_option
+R1757:1761 Coq.Unicode.Utf8_core <> ::type_scope:'∀'_x_'..'_x_','_x not
+R1804:1810 Coq.Unicode.Utf8_core <> ::type_scope:'∀'_x_'..'_x_','_x not
+binder 1762:1762 <> a:34
+binder 1764:1764 <> b:35
+R1779:1784 Coq.Init.Datatypes <> option ind
+R1789:1792 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R1788:1788 structures.category.Option <> a:34 var
+R1793:1793 structures.category.Option <> b:35 var
+binder 1775:1775 <> u:36
+R1803:1803 structures.category.Option <> a:34 var
+binder 1799:1799 <> y:37
+R1831:1833 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R1811:1819 structures.category.Option <> ap_option def
+R1824:1827 Coq.Init.Datatypes <> Some constr
+R1829:1829 structures.category.Option <> y:37 var
+R1821:1821 structures.category.Option <> u:36 var
+R1834:1842 structures.category.Option <> ap_option def
+R1857:1857 structures.category.Option <> u:36 var
+R1845:1848 Coq.Init.Datatypes <> Some constr
+R1851:1853 structures.category.Functor <> :::'$' not
+R1853:1853 structures.category.Option <> y:37 var
+prf 1906:1928 <> applicative_fmap_option
+R1932:1936 Coq.Unicode.Utf8_core <> ::type_scope:'∀'_x_'..'_x_','_x not
+R1960:1962 Coq.Unicode.Utf8_core <> ::type_scope:'∀'_x_'..'_x_','_x not
+binder 1937:1937 <> A:38
+binder 1939:1939 <> B:39
+R1955:1958 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R1954:1954 structures.category.Option <> A:38 var
+R1959:1959 structures.category.Option <> B:39 var
+binder 1950:1950 <> f:40
+R1969:1972 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R1963:1966 structures.category.Functor <> fmap meth
+R1968:1968 structures.category.Option <> f:40 var
+R1973:1981 structures.category.Option <> ap_option def
+R1984:1987 Coq.Init.Datatypes <> Some constr
+R1989:1989 structures.category.Option <> f:40 var
+inst 2038:2055 <> applicative_option
+R2059:2069 structures.category.Functor <> Applicative class
+R2071:2076 Coq.Init.Datatypes <> option ind
+R2078:2091 structures.category.Option <> functor_option inst
+R2398:2413 structures.category.Functor <> applicative_fmap meth
+R2335:2357 structures.category.Functor <> applicative_interchange meth
+R2270:2293 structures.category.Functor <> applicative_homomorphism meth
+R2215:2233 structures.category.Functor <> applicative_compose meth
+R2158:2177 structures.category.Functor <> applicative_identity meth
+R2128:2129 structures.category.Functor <> ap meth
+R2104:2107 structures.category.Functor <> pure meth
+binder 2109:2109 <> A:41
+R2116:2119 Coq.Init.Datatypes <> Some constr
+R2121:2121 structures.category.Option <> A:41 var
+binder 2131:2131 <> A:42
+binder 2133:2133 <> B:43
+R2139:2147 structures.category.Option <> ap_option def
+R2149:2149 structures.category.Option <> A:42 var
+R2151:2151 structures.category.Option <> B:43 var
+R2182:2208 structures.category.Option <> applicative_identity_option thm
+R2238:2263 structures.category.Option <> applicative_compose_option thm
+R2298:2328 structures.category.Option <> applicative_homomorphism_option thm
+R2362:2391 structures.category.Option <> applicative_interchange_option thm
+R2418:2440 structures.category.Option <> applicative_fmap_option thm
+def 2459:2469 <> bind_option
+binder 2472:2472 <> a:44
+binder 2474:2474 <> b:45
+R2490:2495 Coq.Init.Datatypes <> option ind
+R2497:2497 structures.category.Option <> a:44 var
+binder 2486:2486 <> x:46
+R2506:2510 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R2505:2505 structures.category.Option <> a:44 var
+R2511:2516 Coq.Init.Datatypes <> option ind
+R2518:2518 structures.category.Option <> b:45 var
+binder 2501:2501 <> f:47
+R2536:2536 structures.category.Option <> x:46 var
+R2551:2554 Coq.Init.Datatypes <> Some constr
+R2561:2561 structures.category.Option <> f:47 var
+R2563:2563 structures.category.Option <> x:46 var
+R2573:2576 Coq.Init.Datatypes <> None constr
+R2581:2584 Coq.Init.Datatypes <> None constr
+prf 2604:2629 <> monad_left_identity_option
+R2633:2637 Coq.Unicode.Utf8_core <> ::type_scope:'∀'_x_'..'_x_','_x not
+R2675:2681 Coq.Unicode.Utf8_core <> ::type_scope:'∀'_x_'..'_x_','_x not
+binder 2638:2638 <> a:49
+binder 2640:2640 <> b:50
+R2655:2655 structures.category.Option <> a:49 var
+binder 2651:2651 <> x:51
+R2663:2666 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R2662:2662 structures.category.Option <> a:49 var
+R2667:2672 Coq.Init.Datatypes <> option ind
+R2674:2674 structures.category.Option <> b:50 var
+binder 2659:2659 <> k:52
+R2704:2706 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R2682:2692 structures.category.Option <> bind_option def
+R2703:2703 structures.category.Option <> k:52 var
+R2695:2698 Coq.Init.Datatypes <> Some constr
+R2700:2700 structures.category.Option <> x:51 var
+R2707:2707 structures.category.Option <> k:52 var
+R2709:2709 structures.category.Option <> x:51 var
+prf 2746:2772 <> monad_right_identity_option
+binder 2784:2784 <> a:53
+binder 2786:2786 <> b:54
+R2801:2806 Coq.Init.Datatypes <> option ind
+R2808:2808 structures.category.Option <> a:53 var
+binder 2797:2797 <> m:55
+R2831:2833 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R2813:2823 structures.category.Option <> bind_option def
+R2827:2830 Coq.Init.Datatypes <> Some constr
+R2825:2825 structures.category.Option <> m:55 var
+R2834:2834 structures.category.Option <> m:55 var
+prf 2883:2906 <> monad_associative_option
+binder 2920:2920 <> a:56
+binder 2922:2922 <> b:57
+binder 2924:2924 <> c:58
+R2939:2944 Coq.Init.Datatypes <> option ind
+R2946:2946 structures.category.Option <> a:56 var
+binder 2935:2935 <> m:59
+R2955:2958 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R2954:2954 structures.category.Option <> a:56 var
+R2959:2964 Coq.Init.Datatypes <> option ind
+R2966:2966 structures.category.Option <> b:57 var
+binder 2950:2950 <> k:60
+R2975:2978 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R2974:2974 structures.category.Option <> b:57 var
+R2979:2984 Coq.Init.Datatypes <> option ind
+R2986:2986 structures.category.Option <> c:58 var
+binder 2970:2970 <> h:61
+R3038:3040 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R2994:3004 structures.category.Option <> bind_option def
+binder 3013:3013 <> x:62
+R3018:3028 structures.category.Option <> bind_option def
+R3036:3036 structures.category.Option <> h:61 var
+R3031:3031 structures.category.Option <> k:60 var
+R3033:3033 structures.category.Option <> x:62 var
+R3006:3006 structures.category.Option <> m:59 var
+R3041:3051 structures.category.Option <> bind_option def
+R3071:3071 structures.category.Option <> h:61 var
+R3054:3064 structures.category.Option <> bind_option def
+R3068:3068 structures.category.Option <> k:60 var
+R3066:3066 structures.category.Option <> m:59 var
+inst 3125:3136 <> monad_option
+R3140:3144 structures.category.Monad <> Monad class
+R3153:3170 structures.category.Option <> applicative_option inst
+R3146:3151 Coq.Init.Datatypes <> option ind
+R3347:3363 structures.category.Monad <> monad_associative meth
+R3281:3300 structures.category.Monad <> monad_right_identity meth
+R3217:3235 structures.category.Monad <> monad_left_identity meth
+R3183:3186 structures.category.Monad <> bind meth
+binder 3188:3188 <> a:63
+binder 3190:3190 <> b:64
+R3196:3206 structures.category.Option <> bind_option def
+R3208:3208 structures.category.Option <> a:63 var
+R3210:3210 structures.category.Option <> b:64 var
+binder 3237:3237 <> A:65
+binder 3239:3239 <> B:66
+R3245:3270 structures.category.Option <> monad_left_identity_option thm
+R3272:3272 structures.category.Option <> A:65 var
+R3274:3274 structures.category.Option <> B:66 var
+binder 3302:3302 <> A:67
+binder 3304:3304 <> B:68
+R3310:3336 structures.category.Option <> monad_right_identity_option thm
+R3338:3338 structures.category.Option <> A:67 var
+R3340:3340 structures.category.Option <> B:68 var
+binder 3365:3365 <> A:69
+binder 3367:3367 <> B:70
+binder 3369:3369 <> C:71
+R3375:3398 structures.category.Option <> monad_associative_option thm
+R3400:3400 structures.category.Option <> A:69 var
+R3402:3402 structures.category.Option <> B:70 var
+R3404:3404 structures.category.Option <> C:71 var
+inst 3422:3442 <> fmap_pointwise_Proper
+R3453:3456 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+binder 3445:3445 <> f:72
+R3468:3474 structures.category.Functor <> Functor class
+R3476:3476 structures.category.Option <> f:72 var
+binder 3464:3464 <> E:73
+binder 3480:3480 <> A:74
+binder 3482:3482 <> B:75
+R3495:3500 Coq.Classes.Morphisms <> Proper class
+R3539:3542 structures.category.Functor <> fmap meth
+R3529:3534 Coq.Classes.Morphisms ProperNotations ::signature_scope:x_'==>'_x not
+R3504:3521 Coq.Classes.Morphisms <> pointwise_relation def
+R3523:3523 structures.category.Option <> A:74 var
+R3525:3525 structures.category.Option <> B:75 var
+R3527:3528 Coq.Init.Logic <> eq ind
+R3535:3536 Coq.Init.Logic <> eq ind
+R3598:3622 Coq.Logic.FunctionalExtensionality <> functional_extensionality thm
+R3598:3622 Coq.Logic.FunctionalExtensionality <> functional_extensionality thm
+prf 3659:3667 <> fmap_some
+R3673:3677 Coq.Unicode.Utf8_core <> ::type_scope:'∀'_x_'..'_x_','_x not
+R3750:3752 Coq.Unicode.Utf8_core <> ::type_scope:'∀'_x_'..'_x_','_x not
+binder 3678:3678 <> A:76
+binder 3682:3682 <> B:77
+R3697:3702 Coq.Init.Datatypes <> option ind
+R3704:3704 structures.category.Option <> A:76 var
+binder 3693:3693 <> o:78
+R3712:3712 structures.category.Option <> B:77 var
+binder 3708:3708 <> x:79
+R3721:3724 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R3720:3720 structures.category.Option <> A:76 var
+R3725:3725 structures.category.Option <> B:77 var
+binder 3716:3716 <> f:80
+R3741:3743 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R3733:3736 structures.category.Functor <> fmap meth
+R3740:3740 structures.category.Option <> o:78 var
+R3738:3738 structures.category.Option <> f:80 var
+R3744:3747 Coq.Init.Datatypes <> Some constr
+R3749:3749 structures.category.Option <> x:79 var
+binder 3729:3729 <> H:81
+R3753:3756 Coq.Unicode.Utf8_core <> ::type_scope:'∃'_x_'..'_x_','_x not
+R3758:3759 Coq.Unicode.Utf8_core <> ::type_scope:'∃'_x_'..'_x_','_x not
+binder 3757:3757 <> a:82
+R3770:3773 Coq.Init.Logic <> ::type_scope:x_'/\'_x not
+R3761:3763 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R3760:3760 structures.category.Option <> o:78 var
+R3764:3767 Coq.Init.Datatypes <> Some constr
+R3769:3769 structures.category.Option <> a:82 var
+R3775:3777 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R3774:3774 structures.category.Option <> x:79 var
+R3778:3778 structures.category.Option <> f:80 var
+R3780:3780 structures.category.Option <> a:82 var

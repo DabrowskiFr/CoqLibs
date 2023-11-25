@@ -1,0 +1,22 @@
+(lang dune 3.11)
+(name structures)
+(sections (lib .) (lib_root ..))
+(files
+ (lib (META dune-package opam))
+ (lib_root
+  (coq/user-contrib/structures/algebra/Monoid.v
+   coq/user-contrib/structures/algebra/Monoid.vo
+   coq/user-contrib/structures/algebra/cpo.v
+   coq/user-contrib/structures/algebra/cpo.vo
+   coq/user-contrib/structures/algebra/order.v
+   coq/user-contrib/structures/algebra/order.vo
+   coq/user-contrib/structures/category/Foldable.v
+   coq/user-contrib/structures/category/Foldable.vo
+   coq/user-contrib/structures/category/Functor.v
+   coq/user-contrib/structures/category/Functor.vo
+   coq/user-contrib/structures/category/Monad.v
+   coq/user-contrib/structures/category/Monad.vo
+   coq/user-contrib/structures/category/Option.v
+   coq/user-contrib/structures/category/Option.vo
+   coq/user-contrib/structures/category/Traversable.v
+   coq/user-contrib/structures/category/Traversable.vo)))

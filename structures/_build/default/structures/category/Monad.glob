@@ -1,0 +1,100 @@
+DIGEST 2cd5664decfcc0e33ea324494e4f973f
+Fstructures.category.Monad
+R895:898 Coq.Unicode.Utf8 <> <> lib
+R941:947 structures.category.Functor <> <> lib
+R1002:1005 structures.category.Functor <> pure meth
+not 988:988 <> ::monad_scope:'return'
+rec 1029:1033 <> Monad
+proj 1094:1097 <> bind
+proj 1149:1167 <> monad_left_identity
+proj 1238:1257 <> monad_right_identity
+proj 1314:1330 <> monad_associative
+R1044:1047 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+binder 1036:1036 <> f:1
+R1060:1070 structures.category.Functor <> Applicative class
+R1072:1072 structures.category.Monad <> f:1 var
+binder 1056:1056 <> E:3
+R1101:1105 Coq.Unicode.Utf8_core <> ::type_scope:'∀'_x_'..'_x_','_x not
+R1116:1118 Coq.Unicode.Utf8_core <> ::type_scope:'∀'_x_'..'_x_','_x not
+binder 1106:1106 <> a:5
+binder 1108:1108 <> b:6
+R1122:1125 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R1119:1119 structures.category.Monad <> f:1 var
+R1121:1121 structures.category.Monad <> a:5 var
+R1126:1126 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R1135:1139 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R1128:1131 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R1127:1127 structures.category.Monad <> a:5 var
+R1132:1132 structures.category.Monad <> f:1 var
+R1134:1134 structures.category.Monad <> b:6 var
+R1140:1140 structures.category.Monad <> f:1 var
+R1142:1142 structures.category.Monad <> b:6 var
+R1171:1175 Coq.Unicode.Utf8_core <> ::type_scope:'∀'_x_'..'_x_','_x not
+R1208:1210 Coq.Unicode.Utf8_core <> ::type_scope:'∀'_x_'..'_x_','_x not
+binder 1176:1176 <> a:8
+binder 1178:1178 <> b:9
+R1193:1193 structures.category.Monad <> a:8 var
+binder 1189:1189 <> x:10
+R1201:1204 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R1200:1200 structures.category.Monad <> a:8 var
+R1205:1205 structures.category.Monad <> f:1 var
+R1207:1207 structures.category.Monad <> b:9 var
+binder 1197:1197 <> k:11
+R1226:1228 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R1211:1214 structures.category.Monad <> bind:7 meth
+R1225:1225 structures.category.Monad <> k:11 var
+R1217:1220 structures.category.Functor <> pure meth
+R1222:1222 structures.category.Monad <> x:10 var
+R1229:1229 structures.category.Monad <> k:11 var
+R1231:1231 structures.category.Monad <> x:10 var
+binder 1269:1269 <> a:13
+binder 1271:1271 <> b:14
+R1286:1286 structures.category.Monad <> f:1 var
+R1288:1288 structures.category.Monad <> a:13 var
+binder 1282:1282 <> m:15
+R1304:1306 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R1293:1296 structures.category.Monad <> bind:7 meth
+R1300:1303 structures.category.Functor <> pure meth
+R1298:1298 structures.category.Monad <> m:15 var
+R1307:1307 structures.category.Monad <> m:15 var
+binder 1342:1342 <> a:17
+binder 1344:1344 <> b:18
+binder 1346:1346 <> c:19
+R1361:1361 structures.category.Monad <> f:1 var
+R1363:1363 structures.category.Monad <> a:17 var
+binder 1357:1357 <> m:20
+R1372:1375 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R1371:1371 structures.category.Monad <> a:17 var
+R1376:1376 structures.category.Monad <> f:1 var
+R1378:1378 structures.category.Monad <> b:18 var
+binder 1367:1367 <> k:21
+R1387:1390 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R1386:1386 structures.category.Monad <> b:18 var
+R1391:1391 structures.category.Monad <> f:1 var
+R1393:1393 structures.category.Monad <> c:19 var
+binder 1382:1382 <> h:22
+R1435:1437 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R1405:1408 structures.category.Monad <> bind:7 meth
+binder 1417:1417 <> x:23
+R1422:1425 structures.category.Monad <> bind:7 meth
+R1433:1433 structures.category.Monad <> h:22 var
+R1428:1428 structures.category.Monad <> k:21 var
+R1430:1430 structures.category.Monad <> x:23 var
+R1410:1410 structures.category.Monad <> m:20 var
+R1438:1441 structures.category.Monad <> bind:7 meth
+R1454:1454 structures.category.Monad <> h:22 var
+R1444:1447 structures.category.Monad <> bind:7 meth
+R1451:1451 structures.category.Monad <> k:21 var
+R1449:1449 structures.category.Monad <> m:20 var
+R1479:1482 structures.category.Monad <> bind meth
+not 1470:1470 <> ::monad_scope:x_'>>='_x
+binder 1533:1533 <> m:25
+binder 1535:1535 <> k:26
+R1540:1543 structures.category.Monad <> bind meth
+binder 1552:1552 <> x:27
+R1557:1557 structures.category.Monad <> k:26 var
+R1545:1545 structures.category.Monad <> m:25 var
+not 1520:1520 <> ::monad_scope:x_'>>'_x
+R1623:1626 structures.category.Monad <> bind meth
+binder 1635:1635 <> X:28
+not 1601:1601 <> :::'do'_x_'<-'_x_';'_x

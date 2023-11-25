@@ -1,0 +1,209 @@
+DIGEST 88b24f0c6eb8c588c87cfc150398ff54
+Fstructures.algebra.order
+def 11:13 <> set
+binder 16:16 <> A:1
+binder 25:25 <> P:2
+R30:30 Coq.Init.Specif <> ::type_scope:'{'_x_':'_x_'|'_x_'}' not
+R32:34 Coq.Init.Specif <> ::type_scope:'{'_x_':'_x_'|'_x_'}' not
+R36:38 Coq.Init.Specif <> ::type_scope:'{'_x_':'_x_'|'_x_'}' not
+R40:40 Coq.Init.Specif <> ::type_scope:'{'_x_':'_x_'|'_x_'}' not
+R35:35 structures.algebra.order <> A:1 var
+binder 31:31 <> x:3
+R39:39 structures.algebra.order <> P:2 var
+mod 51:54 <> Relt
+def 231:233 Relt set
+binder 236:236 <> A:4
+R250:253 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R249:249 structures.algebra.order <> A:4 var
+def 349:356 Relt relation
+binder 359:359 <> A:5
+binder 361:361 <> B:6
+R375:378 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R374:374 structures.algebra.order <> A:5 var
+R380:383 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R379:379 structures.algebra.order <> B:6 var
+sec 401:404 Relt Defs
+binder 421:421 <> A:7
+ind 447:455 Relt Reflexive
+constr 497:507 Relt reflexivity
+rec 447:455 Relt Reflexive
+proj 497:507 Relt reflexivity
+R462:464 structures.algebra.order Relt set def
+R466:466 structures.algebra.order <> Relt.Defs.A var
+binder 458:458 <> P:8
+R474:481 structures.algebra.order Relt relation def
+R483:483 structures.algebra.order <> Relt.Defs.A var
+R485:485 structures.algebra.order <> Relt.Defs.A var
+binder 470:470 <> R:9
+R522:522 structures.algebra.order <> Relt.Defs.A var
+binder 518:518 <> x:11
+R528:531 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R525:525 structures.algebra.order <> P:8 var
+R527:527 structures.algebra.order <> x:11 var
+R532:532 structures.algebra.order <> R:9 var
+R534:534 structures.algebra.order <> x:11 var
+R536:536 structures.algebra.order <> x:11 var
+ind 554:564 Relt Irreflexive
+constr 606:618 Relt irreflexivity
+rec 554:564 Relt Irreflexive
+proj 606:618 Relt irreflexivity
+R571:573 structures.algebra.order Relt set def
+R575:575 structures.algebra.order <> Relt.Defs.A var
+binder 567:567 <> P:13
+R583:590 structures.algebra.order Relt relation def
+R592:592 structures.algebra.order <> Relt.Defs.A var
+R594:594 structures.algebra.order <> Relt.Defs.A var
+binder 579:579 <> R:14
+R633:633 structures.algebra.order <> Relt.Defs.A var
+binder 629:629 <> x:16
+R639:642 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R636:636 structures.algebra.order <> P:13 var
+R638:638 structures.algebra.order <> x:16 var
+R643:643 structures.algebra.order <> R:14 var
+R645:645 structures.algebra.order <> x:16 var
+R647:647 structures.algebra.order <> x:16 var
+ind 665:674 Relt Transitive
+constr 716:727 Relt transitivity
+rec 665:674 Relt Transitive
+proj 716:727 Relt transitivity
+R681:683 structures.algebra.order Relt set def
+R685:685 structures.algebra.order <> Relt.Defs.A var
+binder 677:677 <> P:18
+R693:700 structures.algebra.order Relt relation def
+R702:702 structures.algebra.order <> Relt.Defs.A var
+R704:704 structures.algebra.order <> Relt.Defs.A var
+binder 689:689 <> R:19
+R746:746 structures.algebra.order <> Relt.Defs.A var
+binder 738:738 <> x:21
+binder 740:740 <> y:22
+binder 742:742 <> z:23
+R752:755 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R749:749 structures.algebra.order <> P:18 var
+R751:751 structures.algebra.order <> x:21 var
+R759:762 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R756:756 structures.algebra.order <> P:18 var
+R758:758 structures.algebra.order <> y:22 var
+R766:769 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R763:763 structures.algebra.order <> P:18 var
+R765:765 structures.algebra.order <> z:23 var
+R775:778 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R770:770 structures.algebra.order <> R:19 var
+R772:772 structures.algebra.order <> x:21 var
+R774:774 structures.algebra.order <> y:22 var
+R784:787 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R779:779 structures.algebra.order <> R:19 var
+R781:781 structures.algebra.order <> y:22 var
+R783:783 structures.algebra.order <> z:23 var
+R788:788 structures.algebra.order <> R:19 var
+R790:790 structures.algebra.order <> x:21 var
+R792:792 structures.algebra.order <> z:23 var
+ind 810:818 Relt Symmetric
+constr 860:867 Relt symmetry
+rec 810:818 Relt Symmetric
+proj 860:867 Relt symmetry
+R825:827 structures.algebra.order Relt set def
+R829:829 structures.algebra.order <> Relt.Defs.A var
+binder 821:821 <> P:25
+R837:844 structures.algebra.order Relt relation def
+R846:846 structures.algebra.order <> Relt.Defs.A var
+R848:848 structures.algebra.order <> Relt.Defs.A var
+binder 833:833 <> R:26
+R884:884 structures.algebra.order <> Relt.Defs.A var
+binder 878:878 <> x:28
+binder 880:880 <> y:29
+R890:893 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R887:887 structures.algebra.order <> P:25 var
+R889:889 structures.algebra.order <> x:28 var
+R897:900 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R894:894 structures.algebra.order <> P:25 var
+R896:896 structures.algebra.order <> y:29 var
+R906:909 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R901:901 structures.algebra.order <> R:26 var
+R903:903 structures.algebra.order <> x:28 var
+R905:905 structures.algebra.order <> y:29 var
+R910:910 structures.algebra.order <> R:26 var
+R912:912 structures.algebra.order <> y:29 var
+R914:914 structures.algebra.order <> x:28 var
+ind 928:937 Relt Asymmetric
+constr 979:987 Relt asymmetry
+rec 928:937 Relt Asymmetric
+proj 979:987 Relt asymmetry
+R944:946 structures.algebra.order Relt set def
+R948:948 structures.algebra.order <> Relt.Defs.A var
+binder 940:940 <> P:31
+R956:963 structures.algebra.order Relt relation def
+R965:965 structures.algebra.order <> Relt.Defs.A var
+R967:967 structures.algebra.order <> Relt.Defs.A var
+binder 952:952 <> R:32
+R1004:1004 structures.algebra.order <> Relt.Defs.A var
+binder 998:998 <> x:34
+binder 1000:1000 <> y:35
+R1010:1013 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R1007:1007 structures.algebra.order <> P:31 var
+R1009:1009 structures.algebra.order <> x:34 var
+R1017:1020 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R1014:1014 structures.algebra.order <> P:31 var
+R1016:1016 structures.algebra.order <> y:35 var
+R1026:1029 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R1021:1021 structures.algebra.order <> R:32 var
+R1023:1023 structures.algebra.order <> x:34 var
+R1025:1025 structures.algebra.order <> y:35 var
+R1035:1038 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R1030:1030 structures.algebra.order <> R:32 var
+R1032:1032 structures.algebra.order <> y:35 var
+R1034:1034 structures.algebra.order <> x:34 var
+R1039:1043 Coq.Init.Logic <> False ind
+def 1721:1729 Relt inclusion
+binder 1732:1732 <> A:37
+R1744:1751 structures.algebra.order Relt relation def
+R1754:1756 structures.algebra.order Relt set def
+R1758:1758 structures.algebra.order <> A:37 var
+R1762:1764 structures.algebra.order Relt set def
+R1766:1766 structures.algebra.order <> A:37 var
+binder 1781:1781 <> P:38
+binder 1783:1783 <> Q:39
+binder 1795:1795 <> x:40
+R1801:1804 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R1798:1798 structures.algebra.order <> P:38 var
+R1800:1800 structures.algebra.order <> x:40 var
+R1805:1805 structures.algebra.order <> Q:39 var
+R1807:1807 structures.algebra.order <> x:40 var
+R1817:1820 structures.algebra.order Relt.Defs <> sec
+inst 1869:1887 Relt inclusion_Reflexive
+binder 1890:1890 <> A:41
+R1904:1906 structures.algebra.order Relt set def
+R1909:1911 structures.algebra.order Relt set def
+R1913:1913 structures.algebra.order <> A:41 var
+binder 1900:1900 <> P:42
+R1919:1927 structures.algebra.order Relt Reflexive class
+R1932:1940 structures.algebra.order Relt inclusion def
+R1942:1942 structures.algebra.order <> A:41 var
+R1929:1929 structures.algebra.order <> P:42 var
+inst 1979:1998 Relt inclusion_Transitive
+binder 2001:2001 <> A:43
+R2015:2017 structures.algebra.order Relt set def
+R2020:2022 structures.algebra.order Relt set def
+R2024:2024 structures.algebra.order <> A:43 var
+binder 2011:2011 <> P:44
+R2030:2039 structures.algebra.order Relt Transitive class
+R2044:2052 structures.algebra.order Relt inclusion def
+R2054:2054 structures.algebra.order <> A:43 var
+R2041:2041 structures.algebra.order <> P:44 var
+ax 2081:2083 Relt ext
+binder 2095:2095 <> A:45
+R2112:2114 structures.algebra.order Relt set def
+R2116:2116 structures.algebra.order <> A:45 var
+binder 2106:2106 <> P:46
+binder 2108:2108 <> Q:47
+R2121:2121 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R2145:2149 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+binder 2129:2129 <> x:48
+R2136:2140 Coq.Init.Logic <> ::type_scope:x_'<->'_x not
+R2133:2133 structures.algebra.order <> P:46 var
+R2135:2135 structures.algebra.order <> x:48 var
+R2141:2141 structures.algebra.order <> Q:47 var
+R2143:2143 structures.algebra.order <> x:48 var
+R2151:2153 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R2150:2150 structures.algebra.order <> P:46 var
+R2154:2154 structures.algebra.order <> Q:47 var
+R2192:2195 structures.algebra.order Relt <> mod

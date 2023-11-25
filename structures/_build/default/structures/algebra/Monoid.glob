@@ -1,0 +1,57 @@
+DIGEST 8b06873efc4c1c61e5d116ac967238a1
+Fstructures.algebra.Monoid
+R895:898 Coq.Unicode.Utf8 <> <> lib
+rec 908:913 <> Monoid
+proj 937:942 <> mempty
+proj 953:959 <> mappend
+proj 985:998 <> monoid_left_id
+proj 1039:1053 <> monoid_right_id
+proj 1093:1104 <> monoid_assoc
+binder 916:916 <> A:1
+R946:946 structures.algebra.Monoid <> A:1 var
+R964:967 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R963:963 structures.algebra.Monoid <> A:1 var
+R969:972 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R968:968 structures.algebra.Monoid <> A:1 var
+R973:973 structures.algebra.Monoid <> A:1 var
+binder 1010:1010 <> a:5
+R1029:1031 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R1013:1019 structures.algebra.Monoid <> mappend:4 meth
+R1028:1028 structures.algebra.Monoid <> a:5 var
+R1021:1026 structures.algebra.Monoid <> mempty:3 meth
+R1032:1032 structures.algebra.Monoid <> a:5 var
+binder 1064:1064 <> a:7
+R1083:1085 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R1067:1073 structures.algebra.Monoid <> mappend:4 meth
+R1077:1082 structures.algebra.Monoid <> mempty:3 meth
+R1075:1075 structures.algebra.Monoid <> a:7 var
+R1086:1086 structures.algebra.Monoid <> a:7 var
+binder 1118:1118 <> a:9
+binder 1120:1120 <> b:10
+binder 1122:1122 <> c:11
+R1148:1150 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R1125:1131 structures.algebra.Monoid <> mappend:4 meth
+R1136:1142 structures.algebra.Monoid <> mappend:4 meth
+R1146:1146 structures.algebra.Monoid <> c:11 var
+R1144:1144 structures.algebra.Monoid <> b:10 var
+R1133:1133 structures.algebra.Monoid <> a:9 var
+R1151:1157 structures.algebra.Monoid <> mappend:4 meth
+R1173:1173 structures.algebra.Monoid <> c:11 var
+R1160:1166 structures.algebra.Monoid <> mappend:4 meth
+R1170:1170 structures.algebra.Monoid <> b:10 var
+R1168:1168 structures.algebra.Monoid <> a:9 var
+rec 1187:1203 <> CommutativeMonoid
+proj 1243:1256 <> monoid_commute
+binder 1206:1206 <> A:13
+R1222:1227 structures.algebra.Monoid <> Monoid class
+R1229:1229 structures.algebra.Monoid <> A:13 var
+binder 1218:1218 <> E:14
+binder 1267:1267 <> a:16
+binder 1269:1269 <> b:17
+R1283:1285 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R1272:1278 structures.algebra.Monoid <> mappend meth
+R1282:1282 structures.algebra.Monoid <> b:17 var
+R1280:1280 structures.algebra.Monoid <> a:16 var
+R1286:1292 structures.algebra.Monoid <> mappend meth
+R1296:1296 structures.algebra.Monoid <> a:16 var
+R1294:1294 structures.algebra.Monoid <> b:17 var

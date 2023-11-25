@@ -1,0 +1,4 @@
+(coq.theory
+ (name structures.category)
+ (package structures)
+ (theories structures.algebra))

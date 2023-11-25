@@ -1,0 +1,23 @@
+lib: [
+  "_build/install/default/lib/structures/META"
+  "_build/install/default/lib/structures/dune-package"
+  "_build/install/default/lib/structures/opam"
+]
+lib_root: [
+  "_build/install/default/lib/coq/user-contrib/structures/algebra/Monoid.v" {"coq/user-contrib/structures/algebra/Monoid.v"}
+  "_build/install/default/lib/coq/user-contrib/structures/algebra/Monoid.vo" {"coq/user-contrib/structures/algebra/Monoid.vo"}
+  "_build/install/default/lib/coq/user-contrib/structures/algebra/cpo.v" {"coq/user-contrib/structures/algebra/cpo.v"}
+  "_build/install/default/lib/coq/user-contrib/structures/algebra/cpo.vo" {"coq/user-contrib/structures/algebra/cpo.vo"}
+  "_build/install/default/lib/coq/user-contrib/structures/algebra/order.v" {"coq/user-contrib/structures/algebra/order.v"}
+  "_build/install/default/lib/coq/user-contrib/structures/algebra/order.vo" {"coq/user-contrib/structures/algebra/order.vo"}
+  "_build/install/default/lib/coq/user-contrib/structures/category/Foldable.v" {"coq/user-contrib/structures/category/Foldable.v"}
+  "_build/install/default/lib/coq/user-contrib/structures/category/Foldable.vo" {"coq/user-contrib/structures/category/Foldable.vo"}
+  "_build/install/default/lib/coq/user-contrib/structures/category/Functor.v" {"coq/user-contrib/structures/category/Functor.v"}
+  "_build/install/default/lib/coq/user-contrib/structures/category/Functor.vo" {"coq/user-contrib/structures/category/Functor.vo"}
+  "_build/install/default/lib/coq/user-contrib/structures/category/Monad.v" {"coq/user-contrib/structures/category/Monad.v"}
+  "_build/install/default/lib/coq/user-contrib/structures/category/Monad.vo" {"coq/user-contrib/structures/category/Monad.vo"}
+  "_build/install/default/lib/coq/user-contrib/structures/category/Option.v" {"coq/user-contrib/structures/category/Option.v"}
+  "_build/install/default/lib/coq/user-contrib/structures/category/Option.vo" {"coq/user-contrib/structures/category/Option.vo"}
+  "_build/install/default/lib/coq/user-contrib/structures/category/Traversable.v" {"coq/user-contrib/structures/category/Traversable.v"}
+  "_build/install/default/lib/coq/user-contrib/structures/category/Traversable.vo" {"coq/user-contrib/structures/category/Traversable.vo"}
+]

@@ -1,0 +1,26 @@
+DIGEST ff3375f5c9d42b643fefadde8491b277
+Fstructures.category.Foldable
+R895:898 Coq.Unicode.Utf8 <> <> lib
+R916:929 Coq.Program.Basics <> <> lib
+R947:970 Coq.Logic.FunctionalExtensionality <> <> lib
+R988:991 Coq.Lists.List <> <> lib
+R1034:1040 structures.category.Functor <> <> lib
+R1082:1087 structures.algebra.Monoid <> <> lib
+rec 1128:1132 <> Endo_
+proj 1145:1151 <> appEndo
+binder 1134:1134 <> a:1
+R1156:1159 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R1155:1155 structures.category.Foldable <> a:1 var
+R1160:1160 structures.category.Foldable <> a:1 var
+scheme 1128:1132 <> Endo__rect
+scheme 1128:1132 <> Endo__ind
+scheme 1128:1132 <> Endo__rec
+scheme 1128:1132 <> Endo__sind
+rec 1175:1179 <> Dual_
+proj 1193:1199 <> getDual
+binder 1181:1181 <> a:4
+R1203:1203 structures.category.Foldable <> a:4 var
+scheme 1175:1179 <> Dual__rect
+scheme 1175:1179 <> Dual__ind
+scheme 1175:1179 <> Dual__rec
+scheme 1175:1179 <> Dual__sind
