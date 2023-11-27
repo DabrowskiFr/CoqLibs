@@ -1,7 +1,10 @@
 -I reactive
 -R reactive reactive
 reactive/streams/stream.v
-reactive/machines/mealy/mealy.v
+reactive/machines/mealy.v
+reactive/machines/moore.v
+reactive/machines/kripke.v
+reactive/machines/bucchi.v
 reactive/ltl/ltl.v
 reactive/bisimilarity/bisimilarity.v
 reactive/arrows/arrow.v
