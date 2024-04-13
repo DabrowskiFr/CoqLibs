@@ -23,8 +23,14 @@ Section Stream.
     #[refine] Instance functor_f (A : Type) : Functor (Fₛ A) := 
         { fmap := fun _ _ f p => (fst p, f (snd p)) }.
     Proof.
-        -   intros U [a u]; reflexivity.
-        -   intros U V W g h [a u]; reflexivity.
+        -   intro U.
+            apply functional_extensionality.
+            intros [a u]; reflexivity.
+        -   intros U B C g h.
+            apply functional_extensionality.
+            intros [a u]; reflexivity.
+        (* -   intros U [a u]; reflexivity.
+        -   intros U V W g h [a u]; reflexivity. *)
     Qed.
 
     Instance stream_CoAlgebra ( A : Type ) : CoAlgebra (Fₛ A) (stream A) := 
