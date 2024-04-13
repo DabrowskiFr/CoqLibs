@@ -1,0 +1,61 @@
+\documentclass[12pt]{article}
+\usepackage{a4wide}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsthm}
+
+\newtheorem{definition}[section]{Definition}
+\newtheorem{theorem}[section]{Theorem}
+
+\begin{document}
+\title{Domain Theory}
+\begin{definition}
+    Given a partial order $(D, \sqsubseteq)$, a non-empty subset
+    $\Delta \subseteq D$ is called directed if 
+    $$
+    \forall x,y \in \Delta. \exists z.~x \sqsubseteq z {\text{ and }} y \sqsubseteq z
+    $$
+    In the sequel $\Delta \subseteq_{dir}$ stands for: "$\Delta$ is a directed 
+    subset of $D$" (when clear from the context, the subscript is omitted).
+    A partial order $(D,\sqsubseteq)$ is called a directed complete partial order (dcpo)
+    if every $\Delta \subseteq D$ has a least upperbound (lub) denoted $\bigsqcup \Delta$.
+    If moreover $(\Delta,\sqsubseteq)$ has a least element (written $\bot$), then it
+    is called a complete partial order (cpo). 
+\end{definition}
+\begin{definition} 
+    Let $(D_1,\sqsubseteq_1)$ and $(D_2,\sqsubseteq_2)$ be partial orders.
+    A function $f : D_1 \rightarrow D_2$ is called monotonic if 
+    $$
+    \forall x,y \in D. x \sqsubseteq_1 y \Rightarrow f(x) \sqsubseteq_2 f(y)
+    $$
+    If $D_1$ and $D_2$ are dcpo's, a function $f : D_1 \rightarrow D_2$ is called
+    continuous if it is monotonic and
+    $$
+        \forall \Delta \subseteq_{dir} X.f(\bigsqcup_1 \Delta) = \bigsqcup_2 f (\Delta)
+    $$
+    (Notice that a monotonic function maps directed sets to directed sets).
+    A fixpoint of $f : D \rightarrow D$ is an element $x$ such that $f(x)=x$.
+    A prefixpoint of $f : D \rightarrow D$ is an element $x$ such that 
+    $f(x) \sqsubseteq x$. If $f$ has a least fixpoint, we denote if by $fix(f)$.
+\end{definition}
+\begin{theorem}
+If $D$ is a cpo and $f : D \rightarrow D$ is continuous then
+$\bigsqcup_{n \in \omega}f^n(\bot)$ is a fixpoint of $f$, and 
+is the least prefixpoint of $f$ (hence it is the least fixpoint of $f$).    
+\end{theorem}
+\begin{proof}
+    From $\bot \sqsubseteq f(\bot)$, we get by monotonicity that
+    $\bot,f(\bot),\ldots,f^n(\bot),\ldots$ is a increasing chain, 
+    thus is directed. By continuity of $f$, we have
+    $$
+    f(\bigsqcup_{n\in \omega}f^n(\bot)) = 
+    \bigsqcup_{n \in \omega} f^{n+1}(\bot) = 
+    \bigsqcup_{n \in \omega} f^n(\bot)
+    $$
+    Suppose $f(x) \sqsubseteq x$. 
+    We show $f^n(\bot) \sqsubseteq x$ by induction on $n$.
+    The base case is clear by minimality of $\bot$. Suppose $f^n(\bot) \sqsubseteq x$ :
+    by monotonicity $f^{n+1}(\bot) \sqsubseteq f(x)$ and we conclude by transitivity.
+\end{proof}
+
+\end{document}

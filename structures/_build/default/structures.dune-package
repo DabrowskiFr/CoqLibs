@@ -1,4 +1,4 @@
-(lang dune 3.11)
+(lang dune 3.14)
 (name structures)
 (sections (lib .) (lib_root ..))
 (files
@@ -10,6 +10,10 @@
    coq/user-contrib/structures/algebra/cpo.vo
    coq/user-contrib/structures/algebra/order.v
    coq/user-contrib/structures/algebra/order.vo
+   coq/user-contrib/structures/basic/test.v
+   coq/user-contrib/structures/basic/test.vo
+   coq/user-contrib/structures/basic/tuple.v
+   coq/user-contrib/structures/basic/tuple.vo
    coq/user-contrib/structures/category/Foldable.v
    coq/user-contrib/structures/category/Foldable.vo
    coq/user-contrib/structures/category/Functor.v
@@ -19,4 +23,10 @@
    coq/user-contrib/structures/category/Option.v
    coq/user-contrib/structures/category/Option.vo
    coq/user-contrib/structures/category/Traversable.v
-   coq/user-contrib/structures/category/Traversable.vo)))
+   coq/user-contrib/structures/category/Traversable.vo
+   coq/user-contrib/structures/domain/domain.v
+   coq/user-contrib/structures/domain/domain.vo
+   coq/user-contrib/structures/logic/firstorder.v
+   coq/user-contrib/structures/logic/firstorder.vo
+   coq/user-contrib/structures/logic/propositional.v
+   coq/user-contrib/structures/logic/propositional.vo)))

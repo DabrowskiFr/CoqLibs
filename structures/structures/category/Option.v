@@ -8,24 +8,23 @@ Require Import Utf8.
 From structures.category Require Import Functor.
 From structures.category Require Import Monad.
 
+Require Import Monad.
 Definition fmap_option {A B : Type} (f : A -> B) (x : option A) :=
   match x with Some y => Some (f y) | None => None end.
 
-Lemma functor_identity_option : forall {A : Type}, fmap_option (@id A) = id.
+Lemma functor_identity_option : 
+  forall {A : Type} (a : option A), fmap_option (@id A) a = a.
 Proof.
-  intros A.
-  apply functional_extensionality.
-  destruct x; reflexivity.
+  intros A a.
+  destruct a; reflexivity.
 Qed.
 
 Lemma functor_compose_option :
-  forall {A B C: Type} (f : B -> C) (g : A -> B),
-    (fmap_option f ∘ fmap_option g) = fmap_option (f ∘ g).
+  forall {A B C: Type} (f : B -> C) (g : A -> B) (a : option A),
+    (fmap_option f ∘ fmap_option g) a = fmap_option (f ∘ g) a.
 Proof.
-  intros A B C f g.
-  apply functional_extensionality.
-  unfold compose.
-  destruct x; reflexivity.
+  intros A B C f g a.
+  destruct a; reflexivity.
 Qed.
 
 Program Instance functor_option : Functor option :=

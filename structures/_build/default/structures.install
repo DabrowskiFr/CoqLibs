@@ -10,6 +10,10 @@ lib_root: [
   "_build/install/default/lib/coq/user-contrib/structures/algebra/cpo.vo" {"coq/user-contrib/structures/algebra/cpo.vo"}
   "_build/install/default/lib/coq/user-contrib/structures/algebra/order.v" {"coq/user-contrib/structures/algebra/order.v"}
   "_build/install/default/lib/coq/user-contrib/structures/algebra/order.vo" {"coq/user-contrib/structures/algebra/order.vo"}
+  "_build/install/default/lib/coq/user-contrib/structures/basic/test.v" {"coq/user-contrib/structures/basic/test.v"}
+  "_build/install/default/lib/coq/user-contrib/structures/basic/test.vo" {"coq/user-contrib/structures/basic/test.vo"}
+  "_build/install/default/lib/coq/user-contrib/structures/basic/tuple.v" {"coq/user-contrib/structures/basic/tuple.v"}
+  "_build/install/default/lib/coq/user-contrib/structures/basic/tuple.vo" {"coq/user-contrib/structures/basic/tuple.vo"}
   "_build/install/default/lib/coq/user-contrib/structures/category/Foldable.v" {"coq/user-contrib/structures/category/Foldable.v"}
   "_build/install/default/lib/coq/user-contrib/structures/category/Foldable.vo" {"coq/user-contrib/structures/category/Foldable.vo"}
   "_build/install/default/lib/coq/user-contrib/structures/category/Functor.v" {"coq/user-contrib/structures/category/Functor.v"}
@@ -20,4 +24,10 @@ lib_root: [
   "_build/install/default/lib/coq/user-contrib/structures/category/Option.vo" {"coq/user-contrib/structures/category/Option.vo"}
   "_build/install/default/lib/coq/user-contrib/structures/category/Traversable.v" {"coq/user-contrib/structures/category/Traversable.v"}
   "_build/install/default/lib/coq/user-contrib/structures/category/Traversable.vo" {"coq/user-contrib/structures/category/Traversable.vo"}
+  "_build/install/default/lib/coq/user-contrib/structures/domain/domain.v" {"coq/user-contrib/structures/domain/domain.v"}
+  "_build/install/default/lib/coq/user-contrib/structures/domain/domain.vo" {"coq/user-contrib/structures/domain/domain.vo"}
+  "_build/install/default/lib/coq/user-contrib/structures/logic/firstorder.v" {"coq/user-contrib/structures/logic/firstorder.v"}
+  "_build/install/default/lib/coq/user-contrib/structures/logic/firstorder.vo" {"coq/user-contrib/structures/logic/firstorder.vo"}
+  "_build/install/default/lib/coq/user-contrib/structures/logic/propositional.v" {"coq/user-contrib/structures/logic/propositional.v"}
+  "_build/install/default/lib/coq/user-contrib/structures/logic/propositional.vo" {"coq/user-contrib/structures/logic/propositional.vo"}
 ]

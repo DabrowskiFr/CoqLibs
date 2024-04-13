@@ -1,0 +1,3 @@
+(coq.theory
+ (name reactive.ltl)
+ (theories mathcomp elpi HB reactive.streams))

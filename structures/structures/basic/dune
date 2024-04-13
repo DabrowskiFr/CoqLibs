@@ -1,0 +1,4 @@
+(coq.theory
+ (name structures.basic)
+ (package structures)
+ (theories mathcomp elpi HB))

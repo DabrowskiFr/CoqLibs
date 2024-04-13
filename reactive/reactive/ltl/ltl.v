@@ -1,7 +1,44 @@
+
+From mathcomp Require Import fintype.
 From reactive.streams Require Import stream.
 Require Import Setoid.
+(* interpretation proposition A -> Prop*)
+(* interpretation ltl stream A -> Prop *)
 
-Section LTL.
+    (* map elements of A to truth values *)
+
+    (* states : mapping of variables *)
+
+    (* computate : sequence of set of propositions *)
+
+    (* Definition state (A : finType) := proposition A -> Prop. *)
+
+    (* We map every possible execution to a computation by mapping each 
+        configuration to the set of atomic propositions it satisfies *)
+    (* Definition computation (A : finType) := stream (state A). *)
+    (* or abstract A and map A to state B *)
+
+    (* execution : sequence of configuration *)
+    (* A computation is executable if there is an execution mapped to it *)
+
+    (* notion d'etat *)
+    (* les propositions parlent de ces états *)
+    (* un calcul associe point à point à une suite d'état l'ensemble des 
+        formules vérifiées *)
+    (* ltl formulas over states *)
+    (* formula syntax -> (state -> Prop) interpretation/mapping     *)
+
+    (* models      
+        valuation |- formula 
+        computation |- temportal formula 
+        *)
+
+    (* semantics of a formula : state -> Prop *)
+
+
+
+Module LTL.
+
 
     Definition formula (A : Set) := stream A -> Prop.
 
@@ -13,6 +50,13 @@ Section LTL.
         fun s => P (hd s).
 
     (* Basic formulae *)
+
+    (* propositions are a finite set of atomic propositions based 
+        on a finite set of *)
+    (* define LTL formula as an inductive type, syntax *)
+    (* ltl formula in term of positions *)
+    (* Form A = formules with variables x,..., in A*)
+    (* Form A = formulas based on atomic propositions*)
 
 
     Inductive ttrue {A : Set} : formula A :=
@@ -407,3 +451,15 @@ Proof.
 Admitted. *)
 
 End LTL.
+
+(*    Notation " p ∧ q " := ( ¬ p ⟶ q)(at level 7, right associativity).
+    Notation " p ∨ q " := (¬(p ⟶ ¬ q))(at level 6, right associativity). 
+    Notation " p ⟷ q " := ((p ⟶ q) ∨ (q ⟶ p))(at level 9, right associativity).   
+*)
+
+    (* Definition judgment := Ensemble formula * formula.
+
+    Inductive rule : judgment -> Prop :=
+        | ID : forall Γ (p : formula), p ∈ Γ -> Γ ⊢ p
+        | MP : forall Γ (p q : formula), Γ ⊢ p -> Γ ⊢ p ⟶ q -> Γ ⊢ q
+    where " Γ ⊢ p " := (rule (Γ, p)). *)

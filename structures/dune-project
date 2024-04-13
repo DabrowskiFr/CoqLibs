@@ -2,7 +2,4 @@
 (using coq 0.8)
 (name structures)
 (generate_opam_files true)
-
-(package 
- (name structures)
-)
+(package (name structures))

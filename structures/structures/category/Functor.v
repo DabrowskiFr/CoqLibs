@@ -34,10 +34,18 @@ Notation "$" := (fun x y => y x) (at level 29).
 Class Functor (f : Type -> Type) : Type :=
   {
     fmap : forall {A B : Type}, (A -> B) -> f A -> f B;
+    functor_identity   : forall {A : Type} (a : f A), fmap (@id A) a = a;
+    functor_compose : forall {A B C : Type} (g : B -> C) (h : A -> B) (a : f A),
+        (fmap g ∘ fmap h) a = fmap (g ∘ h) a
+  }.
+
+(* Class Functor (f : Type -> Type) : Type :=
+  {
+    fmap : forall {A B : Type}, (A -> B) -> f A -> f B;
     functor_identity   : forall {A : Type}, fmap (@id A) = id;
     functor_compose : forall {A B C : Type} (f : B -> C) (g : A -> B),
         (fmap f ∘ fmap g) = fmap (f ∘ g)
-  }.
+  }. *)
 
 Class Applicative (f : Type -> Type) `(E : Functor f)  : Type :=
   {

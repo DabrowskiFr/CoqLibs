@@ -1,0 +1,4 @@
+-R theories/ Domains
+-arg "-w all"
+theories/Utils.v
+theories/Order.v

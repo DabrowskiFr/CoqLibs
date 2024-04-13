@@ -8,3 +8,6 @@ structures/category/Monad.v
 structures/category/Foldable.v
 structures/category/Traversable.v
 structures/category/Option.v
+structures/basic/tuple.v
+structures/logic/propositional.v
+structures/logic/firstorder.v
