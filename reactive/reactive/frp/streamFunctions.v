@@ -1,7 +1,10 @@
 From Coq.Logic Require Import FunctionalExtensionality.
 From Coq.Relations Require Import Relation_Definitions.
 From Coq.Classes Require Import RelationClasses.
+From reactive.utils Require Import Functor.
+From reactive.utils Require Import Algebra.
 From reactive.streams Require Import stream.
+From reactive.streams Require Import coiteration.
 
 Open Scope type_scope.
 Open Scope stream_scope.
@@ -30,6 +33,11 @@ CoFixpoint run {A B : Set} : sf A B -> stream A -> stream B :=
                     str b (run f' s') 
         end.
 
+(* toujours la même fonction step *)
+
+
+Definition make {A B : Set} (f : sf A B) : SFun A B (sf A B) := 
+    CoP step f.
 
 (** ** Bisimilarity *)
 (** As values of a coinductive type, stream functions
@@ -194,6 +202,10 @@ Section BisimEquiv.
     Qed.
 
 End BisimEquiv.
+
+(** CoAlbegra *)
+
+
 
 (* La relation de bisimulation sur les stream functions 
 permet de prouver l'équivalence sémantique de deux streams functions 

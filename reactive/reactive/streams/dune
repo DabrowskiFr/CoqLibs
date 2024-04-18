@@ -1,6 +1,6 @@
 (coq.theory
  (name reactive.streams)
  (package reactive)
- (theories structures.category reactive.utils)
+ (theories reactive.utils)
  (coqdoc_flags :standard --utf8 --gallina)
  )

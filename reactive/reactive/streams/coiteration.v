@@ -8,28 +8,81 @@ Import ListNotations.
 
 Open Scope stream_scope.
 
-(* stream process *)
-(* (S -> T x S, S) S : state, T : value *)
-(* CoStream (T,S) = CoF (S -> T x S, S) *)
-(* stream function *)
-(* CoStream (T,S) -> CoStream (T',S') *)
-(* Synchronous Stream Function *)
-(* SFun (T, T', S) = CoP (S -> T -> T' x S, S) *)
-
-(* stream process includes the initial state 
-    init, out, trans 
-    corresponds to a synchronous stream function, merging out and trans
-    *)
-
-(* concrete stream  / coinductive caracterization *)
-
-Inductive cstream (A St : Set) :=
-    Co : (St -> A * St) -> St -> cstream A St. 
+Inductive coStream (A St : Set) :=
+    Co : (St -> A * St) -> St -> coStream A St.
 
 Arguments Co {A St}.
 
-Definition plus {St₁ St₂ : Set} (cs₁ : cstream nat St₁) (cs₂ : cstream nat St₂): 
-    cstream nat (St₁ * St₂) :=     
+CoFixpoint run_coStream {A St : Set} : 
+    coStream A St -> stream A := 
+    fun cs =>
+        match cs with 
+            Co f x => 
+            let (a,y) := f x in 
+            str a (run_coStream (Co f y))
+        end.
+
+Definition mk_coStream {A : Set} : 
+    stream A -> coStream A (stream A) :=
+    fun s => 
+        Co (fun s => match s with str a s => (a,s) end) s.
+
+Definition CoStreamFunction A St1 B St2 := 
+    coStream A St1 -> coStream B St2.
+
+(* Monad en fixant St *)
+
+(* Definition run_coStreamFunction {A B St1 St2 : Set}
+    (f : CoStreamFunction A St1 B St2) : stream A -> stream B :=
+    fun s => run_coStream (f (mk_coStream s)). *)
+
+Inductive SFun (T T' St : Set) : Set :=
+    CoP : (St -> T -> T' * St) -> St -> SFun T T' St.
+
+Arguments CoP {T T' St}.
+
+Definition runsf {A B St St'} (sf : SFun A B St) : 
+    CoStreamFunction A St' B (St * coStream A St') :=
+    fun cs => 
+    match sf, cs with 
+        CoP f_sf st_sf, Co f_i st_i =>
+        Co (
+            fun (st' : (St  * coStream A St')) => 
+            let (s,c) := st' in 
+                let (a,st') := f_i st_i in 
+                let (b,st) := f_sf st_sf a in 
+                (b, (st, Co f_i st'))
+        ) (st_sf, cs) 
+    end.
+
+Inductive bisim_cstream {A St : Set}  : 
+    coStream A St -> coStream A St -> Prop :=
+    bisim_ctream_rule : forall f x g y (R : St -> St -> Prop),
+        R x y -> 
+        (forall x y, exists v x' y', 
+            R x y -> f x = (v, x') /\ g y = (v, y') /\ R x' y') ->    
+        bisim_cstream (Co f x) (Co g y).
+
+Inductive bisim_sfun {A St1 B St2 : Set}  : 
+    SFun A B St1 -> SFun A B St2 -> Prop :=
+    bisim_sfun_rule : forall f (x : St1) g (y : St2) (R : St1 -> St2 -> Prop),
+        R x y -> 
+        (forall x y a, exists v x' y',
+         R x y -> f x a = (v,x') /\ g y a = (v,y') /\ R x' y') ->
+            bisim_sfun (CoP f x) (CoP g y).
+
+Inductive combinatorial {A B St} : SFun A B St -> Prop :=
+    combinatorial_f : forall (sf : SFun A B St) (sg : SFun A B unit),
+        bisim_sfun sf sg ->
+        combinatorial sf.
+
+(* TypeClass Bisim R *)
+
+(* cstream A St ~ SFun unit A St *)
+(* SFun -> CoStreamFunction *)
+
+Definition plus {St₁ St₂ : Set} (cs₁ : coStream nat St₁) (cs₂ : coStream nat St₂): 
+    coStream nat (St₁ * St₂) :=     
     match cs₁, cs₂ with 
         Co f x, Co g y => 
             Co (fun s => 
@@ -39,13 +92,12 @@ Definition plus {St₁ St₂ : Set} (cs₁ : cstream nat St₁) (cs₂ : cstream
                 ) (x,y)
     end.
 
-Definition pre {A St : Set} (v : A) (cs : cstream A St) : cstream A (A *  St) :=
+Definition pre {A St : Set} (v : A) (cs : coStream A St) : coStream A (A *  St) :=
     match cs with 
         Co f x => Co (fun s => (fst s, (f (snd s)))) (v,x)
     end.
     
-
-Definition even {A St : Set} (cs : cstream A St) : cstream A St :=
+Definition even {A St : Set} (cs : coStream A St) : coStream A St :=
     match cs with 
         Co f x => 
             Co (fun s => 
@@ -55,7 +107,7 @@ Definition even {A St : Set} (cs : cstream A St) : cstream A St :=
             ) x
     end.
 
-Definition dup {A St} (cs : cstream A St) : cstream A ((option A * list A) * St) :=
+Definition dup {A St} (cs : coStream A St) : coStream A ((option A * list A) * St) :=
     match cs with 
         Co f x => 
             Co (
@@ -72,7 +124,7 @@ Definition dup {A St} (cs : cstream A St) : cstream A ((option A * list A) * St)
             ) ((None, nil), x)
     end.
 
-CoFixpoint run {A St : Set} (cs : cstream A St) : stream A := 
+CoFixpoint run {A St : Set} (cs : coStream A St) : stream A := 
     match cs with 
         Co f x => 
             let (v,y) := f x in 
