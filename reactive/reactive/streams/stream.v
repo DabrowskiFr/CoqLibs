@@ -3,7 +3,6 @@ From Coq.Setoids Require Import Setoid.
 From Coq.Logic Require Import FunctionalExtensionality.
 From reactive.utils Require Import Notations.
 From reactive.utils Require Import Category.
-From reactive.utils Require Import Functor.
 From reactive.utils Require Import Algebra.
 
 Declare Scope stream_scope.

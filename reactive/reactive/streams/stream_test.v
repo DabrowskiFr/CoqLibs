@@ -5,7 +5,6 @@
 From reactive.streams Require Import stream.
 From reactive.utils Require Import Notations.
 From reactive.utils Require Import Category.
-From reactive.utils Require Import Functor.
 From reactive.streams Require Import streamFunctor.
 
 Open Scope stream_scope.
@@ -154,7 +153,7 @@ Qed.
     Inductive R5 (C : Set) : stream C -> stream C -> Prop :=
     R5a : forall (A B : Set) (s : stream A) (f : A -> B) (g : B -> C),
     R5 C ((fmap g ∘ fmap f) s) 
-        (fmap (@compose _ Type_Category _ _ _ g  f) s).
+        (fmap (@compose _ Fun_Category _ _ _ g  f) s).
 
 (* Inductive R5 (C : Set) : stream C -> stream C -> Prop :=
     R5a : forall (A B : Set) (s : stream A) (f : A -> B) (g : B -> C),

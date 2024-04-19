@@ -1,7 +1,7 @@
 (* From reactive.utils Require Import Category. *)
 From Coq.Classes Require Import SetoidClass.
 From reactive.utils Require Import Notations.
-From reactive.utils Require Import Functor.
+From reactive.utils Require Import Category.
 
 Class Algebra (F : Type -> Type) {H : Functor F}(U : Type) : Type := 
 {

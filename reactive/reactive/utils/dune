@@ -1,3 +1,4 @@
 (coq.theory
  (name reactive.utils)
- (package reactive))
+ (package reactive)
+ (coqdoc_flags :standard --utf8 --gallina))

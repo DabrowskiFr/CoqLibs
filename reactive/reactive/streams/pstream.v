@@ -1,7 +1,5 @@
 From Coq.Setoids Require Import Setoid.
 From reactive.utils Require Import Notations.
-From reactive.utils Require Import Functor.
-From reactive.utils Require Import Algebra.
 
 Declare Scope stream_scope.
 Open Scope type_scope.

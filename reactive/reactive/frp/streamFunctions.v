@@ -1,7 +1,6 @@
 From Coq.Logic Require Import FunctionalExtensionality.
 From Coq.Relations Require Import Relation_Definitions.
 From Coq.Classes Require Import RelationClasses.
-From reactive.utils Require Import Functor.
 From reactive.utils Require Import Algebra.
 From reactive.streams Require Import stream.
 From reactive.streams Require Import coiteration.
@@ -19,6 +18,11 @@ Open Scope stream_scope.
     of type [A] and produce an output of type [B * sf A B].
     A function over streams of type [A] to streams of type [B]
     for [f : sf A B] is given by [run f : stream A -> stream B]*)
+
+(** * Stream processors *)
+(** Generalizing Monads to arrow, John Hugues, 1998 *)
+(** data SP a b = Put b (SP a b) | Get (a -> SP a b) *)
+(** can be merged *)
 
 CoInductive sf (A B : Set) := SF {step : A -> (B * sf A B)}.
 
