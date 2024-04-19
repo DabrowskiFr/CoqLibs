@@ -146,14 +146,14 @@ Proof.
 Qed.
 
 
-CoFixpoint map_stream {A B : Type} (f : A -> B) : stream A -> stream B :=
+(* CoFixpoint map_stream {A B : Type} (f : A -> B) : stream A -> stream B :=
     fun s => match s with 
         str a s => str (f a) (map_stream f s)
-    end.
+    end. *)
 
     Inductive R5 (C : Set) : stream C -> stream C -> Prop :=
     R5a : forall (A B : Set) (s : stream A) (f : A -> B) (g : B -> C),
-    R5 C ((fmap g ∘ fmap f) s)
+    R5 C ((fmap g ∘ fmap f) s) 
         (fmap (@compose _ Type_Category _ _ _ g  f) s).
 
 (* Inductive R5 (C : Set) : stream C -> stream C -> Prop :=
