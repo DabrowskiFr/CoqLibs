@@ -5,6 +5,9 @@
 From reactive.streams Require Import stream.
 From reactive.utils Require Import Notations.
 From reactive.utils Require Import Category.
+From reactive.utils Require Import Functor.
+From reactive.streams Require Import streamFunctor.
+
 Open Scope stream_scope.
 
 CoInductive eq' {A : Type } : A -> A -> Prop :=
@@ -142,17 +145,32 @@ Proof.
     exact (eq_str_gfp (eq_str_closed_R4 A) _ _ (R4a A s)).
 Qed.
 
-Inductive R5 (C : Set) : stream C -> stream C -> Prop :=
+
+CoFixpoint map_stream {A B : Type} (f : A -> B) : stream A -> stream B :=
+    fun s => match s with 
+        str a s => str (f a) (map_stream f s)
+    end.
+
+    Inductive R5 (C : Set) : stream C -> stream C -> Prop :=
     R5a : forall (A B : Set) (s : stream A) (f : A -> B) (g : B -> C),
-    R5 C ((map g ∘ map f) s) (map (g ∘ f) s).
+    R5 C ((fmap g ∘ fmap f) s)
+        (fmap (@compose _ Type_Category _ _ _ g  f) s).
+
+(* Inductive R5 (C : Set) : stream C -> stream C -> Prop :=
+    R5a : forall (A B : Set) (s : stream A) (f : A -> B) (g : B -> C),
+    R5 C ((fmap g ∘ fmap f) s) 
+        (fmap (@compose _ Type_Category _ _ _ g  f) s). *)
 
 Fact eq_str_closed_R5 : forall (C : Set), eq_str_closed (R5 C).
 Proof.
     constructor.
-    -   intros s1 s2 [].
+    -   intros s1 s2 H.
+        destruct H.
+        destruct s.
         reflexivity.
     -   intros s1 s2 [].
         simpl.
+        destruct s.
         apply R5a.
 Qed.
 

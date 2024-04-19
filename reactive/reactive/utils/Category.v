@@ -3,9 +3,9 @@ From Coq.Logic Require Import FunctionalExtensionality.
 
 (**  We consider only categories whose objects are Types *)
 
-Class Category : Type :=
+Class Category (hom : Type -> Type -> Type): Type :=
     {
-        hom : Type -> Type -> Type; 
+
         idty : forall (A : Type), hom A A;
         compose : forall {A B C : Type}, 
             hom B C -> hom A B ->  hom A C;
@@ -21,10 +21,9 @@ Class Category : Type :=
 Notation " g ∘ f " := (compose g f)
     (at level 40, left associativity).
 
-Instance Type_Category : Category.
+Instance Type_Category : Category (fun A B => forall _:A,B).
     refine (
         {|
-        hom := fun A B => A -> B;
         idty := fun (A : Type) (x : A) => x;
         compose := fun (A B C : Type) (g : B -> C) (f : A -> B) x => g (f x)  
         |}
@@ -37,4 +36,7 @@ Proof.
     -   intros.
         now apply functional_extensionality.
 Defined.
+
+
+(* Arguments idty {hom}. *)
 

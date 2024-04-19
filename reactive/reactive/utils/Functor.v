@@ -22,14 +22,14 @@ Class Monad (m : Type -> Type) `{F : Functor m} : Type :=
 }.
 
 (* Category based on the category on type and functions *)
-Class Arrow `{Cat : Category}: Type := 
+Class Arrow (sf : Type -> Type -> Type) `{Cat : Category sf}: Type := 
 {
-  arr : forall {A B}, @hom Type_Category A B -> @hom Cat A B;
-  first : forall {A B C}, @hom Cat A B -> @hom Cat (A * C)%type (B * C)%type;
-  arr_id : forall A, arr (@id A) = @idty Cat A;
-  arr_comp : forall A B C (g : @hom Type_Category B C) (f : @hom Type_Category A B), 
+  arr : forall {A B}, (A -> B) -> sf A B;
+  first : forall {A B C}, sf A B -> sf (A * C)%type (B * C)%type;
+  arr_id : forall A, arr (idty A) = idty A;
+  arr_comp : forall A B C (g : B -> C) (f : A -> B), 
     arr (g ∘ f) = (arr g) ∘ (arr f); 
-  first_comp : forall A B C D (g : @hom Cat B C) (f : @hom Cat A B),  
+  first_comp : forall A B C D (g : sf B C) (f : sf A B),  
     @first A C D (g ∘ f) = (first g) ∘ (first f);
   (* first_comp2 : forall A B C (f : @hom Cat A (B * C)),
     @first A B C f ∘ arr fst = arr fst ∘ f *)
