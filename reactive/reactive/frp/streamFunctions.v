@@ -24,12 +24,12 @@ Open Scope stream_scope.
 (** data SP a b = Put b (SP a b) | Get (a -> SP a b) *)
 (** can be merged *)
 
-CoInductive sf (A B : Set) := SF {step : A -> (B * sf A B)}.
+CoInductive sf (A B : Type) := SF {step : A -> (B * sf A B)}.
 
 Arguments SF {A B}.
 Arguments step {A B}.
 
-CoFixpoint run {A B : Set} : sf A B -> stream A -> stream B :=
+CoFixpoint run {A B : Type} : sf A B -> stream A -> stream B :=
     fun f s => 
         match s with 
             str a s' => 
@@ -49,7 +49,7 @@ Definition make {A B : Set} (f : sf A B) : SFun A B (sf A B) :=
 
 Section Bisimilarity.
 
-    Context {A B : Set}.
+    Context {A B : Type}.
 
     CoInductive bisimilar : relation (sf A B) :=
         bisimilar_act : forall f₁ f₂,
@@ -67,8 +67,8 @@ Section Bisimilarity.
     Qed.
         
     Lemma bisimilar_sym : forall (f g : sf A B), bisimilar f g -> bisimilar g f.
+    cofix HInd.
     Proof.
-        cofix HInd.
         intros f g H_bsim.
         inversion H_bsim as [ ? ? Ha Hb]; subst.
         constructor.
@@ -133,7 +133,7 @@ Add Parametric Relation A B : (sf A B) (@bisimilar A B)
 
 Section BisimProp.
 
-    Fact b : forall (A B  : Set) (f : sf A B) (s : stream A), 
+    Fact b : forall (A B  : Type) (f : sf A B) (s : stream A), 
         run f s ∼ fst (step f (hd s)) ⋅ run (snd (step f (hd s)))  (tl s).
     Proof.
         intros A B.

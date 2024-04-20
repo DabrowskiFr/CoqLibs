@@ -7,9 +7,8 @@ From Coq.Logic Require Import FunctionalExtensionality.
 
 (** ** Category *)
 
-Class Category (hom : Type -> Type -> Type): Type :=
+Class Category (hom : Type -> Type -> Type) : Type :=
     {
-
         idty : forall (A : Type), hom A A;
         compose : forall {A B C : Type}, 
             hom B C -> hom A B ->  hom A C;
@@ -22,10 +21,14 @@ Class Category (hom : Type -> Type -> Type): Type :=
             compose h (compose g f) = compose (compose h g) f
     }.
 
+Notation "'fn'" := (fun A B => forall _:A,B) (at level 80).
+
 Notation " g ∘ f " := (compose g f)
     (at level 40, left associativity).
 
-Program Instance Fun_Category : Category (fun A B => forall _:A,B) :=
+    (* fun A B => forall _:A,B *)
+
+Program Instance Fun_Category : Category (fn) :=
     {|
         idty := fun (A : Type) (x : A) => x;
         compose := fun (A B C : Type) (g : forall _:B, C) (f : forall _:A,B) x => g (f x)  
@@ -45,6 +48,8 @@ Qed.
 
 (** ** Functor *)
 
+
+(* Endofunctor for (Type, Fun) *)
 Class Functor (f : Type -> Type) : Type :=
   {
     fmap : forall {A B : Type}, (A -> B) -> f A -> f B;
@@ -64,6 +69,7 @@ Next Obligation.
 reflexivity.
 Qed.
 
+(** ** Applicative functor *)
 (** Applicative Programming with Effects, Conor McBride and Ross Paterson, 2008 **)
 
 Class Applicative (f : Type -> Type) `{H : Functor f} : Type :=

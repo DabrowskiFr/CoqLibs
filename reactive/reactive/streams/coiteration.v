@@ -5,7 +5,6 @@ Require Import List.
 Open Scope list_scope.
 Import ListNotations.
 
-
 Open Scope stream_scope.
 
 Inductive coStream (A St : Set) :=
@@ -29,12 +28,6 @@ Definition mk_coStream {A : Set} :
 
 Definition CoStreamFunction A St1 B St2 := 
     coStream A St1 -> coStream B St2.
-
-(* Monad en fixant St *)
-
-(* Definition run_coStreamFunction {A B St1 St2 : Set}
-    (f : CoStreamFunction A St1 B St2) : stream A -> stream B :=
-    fun s => run_coStream (f (mk_coStream s)). *)
 
 Inductive SFun (T T' St : Set) : Set :=
     CoP : (St -> T -> T' * St) -> St -> SFun T T' St.
@@ -68,7 +61,7 @@ Inductive bisim_sfun {A St1 B St2 : Set}  :
     bisim_sfun_rule : forall f (x : St1) g (y : St2) (R : St1 -> St2 -> Prop),
         R x y -> 
         (forall x y a, exists v x' y',
-         R x y -> f x a = (v,x') /\ g y a = (v,y') /\ R x' y') ->
+            R x y -> f x a = (v,x') /\ g y a = (v,y') /\ R x' y') ->
             bisim_sfun (CoP f x) (CoP g y).
 
 Inductive combinatorial {A B St} : SFun A B St -> Prop :=
